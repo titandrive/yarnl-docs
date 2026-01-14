@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkyarnl_docs=globalThis.webpackChunkyarnl_docs||[]).push([[1903],{1912(s){s.exports=JSON.parse('{"blogBasePath":"/yarnl-docs/blog","blogTitle":"Blog","authorsListPath":"/yarnl-docs/blog/authors"}')}}]);

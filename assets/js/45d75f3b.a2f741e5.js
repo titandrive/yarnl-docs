@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkyarnl_docs=globalThis.webpackChunkyarnl_docs||[]).push([[1691],{7530(a){a.exports=JSON.parse('{"metadata":{"permalink":"/yarnl-docs/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

@@ -2,34 +2,82 @@ import type {ReactNode} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 
+function Icon({name}: {name: string}): ReactNode {
+  const icons: Record<string, ReactNode> = {
+    document: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
+      </svg>
+    ),
+    counter: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="4" y="4" width="16" height="16" rx="2"/>
+        <path d="M9 9h6"/>
+        <path d="M12 9v6"/>
+        <path d="M9 15h6"/>
+      </svg>
+    ),
+    tag: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+        <line x1="7" y1="7" x2="7.01" y2="7"/>
+      </svg>
+    ),
+    clock: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+    ),
+    search: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+    ),
+    server: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="6" rx="1"/>
+        <rect x="2" y="15" width="20" height="6" rx="1"/>
+        <circle cx="6" cy="6" r="1"/>
+        <circle cx="6" cy="18" r="1"/>
+      </svg>
+    ),
+  };
+  return icons[name] || null;
+}
+
 const features = [
   {
-    icon: '📄',
+    icon: 'document',
     title: 'PDF Pattern Support',
     description: 'Import your pattern PDFs directly. Page through them while tracking your progress.',
   },
   {
-    icon: '🔢',
+    icon: 'counter',
     title: 'Row Counter',
     description: 'Built-in row counter that stays with your pattern. Never lose your place again.',
   },
   {
-    icon: '🏷️',
+    icon: 'tag',
     title: 'Categories & Tags',
     description: 'Organize patterns by type, difficulty, or any custom tags you want.',
   },
   {
-    icon: '⏱️',
+    icon: 'clock',
     title: 'Time Tracking',
     description: 'See how long you spend on each project. Track your crafting journey.',
   },
   {
-    icon: '🔍',
+    icon: 'search',
     title: 'Search & Filter',
     description: 'Find any pattern instantly. Filter by status, category, or search by name.',
   },
   {
-    icon: '🏠',
+    icon: 'server',
     title: 'Self-Hosted',
     description: 'Your data stays yours. Host it yourself with Docker in minutes.',
   },
@@ -84,7 +132,7 @@ export default function Home(): ReactNode {
             <div className="features-grid">
               {features.map((feature, idx) => (
                 <div key={idx} className="feature-card">
-                  <span className="feature-icon">{feature.icon}</span>
+                  <span className="feature-icon"><Icon name={feature.icon} /></span>
                   <h3>{feature.title}</h3>
                   <p>{feature.description}</p>
                 </div>

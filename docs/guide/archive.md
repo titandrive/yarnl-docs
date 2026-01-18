@@ -1,76 +1,73 @@
 ---
 sidebar_position: 7
 title: Archive
-description: Manage deleted patterns with the archive feature
+description: Manage deleted patterns
 ---
 
 # Archive
 
-The archive feature provides a safety net for deleted patterns. Instead of permanently removing patterns immediately, they're moved to an archive where you can recover them if needed.
+A safety net for deleted patterns.
+
+---
 
 ## How It Works
 
-When you delete a pattern, it goes through a two-stage process:
+When you delete a pattern:
 
-1. **Delete** — Pattern moves to the archive (not permanently deleted)
-2. **Archive** — Pattern stays here until you restore or permanently delete it
+1. **Pattern moves to archive** (not permanently deleted)
+2. **Recover anytime** from Settings → Archive
+3. **Permanently delete** when you're sure
 
-This gives you time to change your mind before a pattern is gone forever.
+---
 
-## Deleting a Pattern
+## Managing Archive
 
-1. Click the **delete button** on a pattern card
-2. Confirm the deletion
-3. The pattern moves to the archive
+Go to **Settings** → **Archive**
 
-The pattern disappears from your library but can be recovered from **Settings → Archive**.
+| Action | Description |
+|--------|-------------|
+| **Restore** | Move back to library |
+| **Delete** | Permanently remove |
+| **Delete All** | Clear entire archive |
 
-## Managing Archived Patterns
-
-Go to **Settings → Archive** to see all your archived patterns.
-
-For each archived pattern, you can:
-- **Restore** — Move it back to your library
-- **Delete** — Permanently remove it (cannot be undone)
-
-You can also use **Delete All** to permanently remove all archived patterns at once.
+---
 
 ## Settings
 
-| Setting | Description |
-|---------|-------------|
-| **Enable delete** | Skip the archive and delete patterns immediately |
-| **Auto-delete archived patterns** | Automatically delete patterns after a set number of days |
-| **Days before deletion** | How long patterns stay in the archive before auto-delete (1-365 days) |
+<div className="steps-grid">
 
-### Enable Delete (Direct Delete Mode)
+<div className="step-box">
 
-If you prefer the old behavior where patterns are permanently deleted immediately:
+### Direct Delete Mode
 
-1. Go to **Settings → Archive**
-2. Enable **Enable delete**
-3. The delete button will now permanently remove patterns without archiving
+Enable **Enable delete** to skip archive entirely.
+
+Patterns are permanently deleted immediately.
+
+</div>
+
+<div className="step-box">
 
 ### Auto-Delete
 
-Don't want to manually clean up your archive? Enable auto-delete to automatically purge old archived patterns.
+Enable **Auto-delete** to automatically purge old archived patterns.
 
-1. Go to **Settings → Archive**
-2. Enable **Auto-delete archived patterns**
-3. Set the number of days (1-365, default is 30)
+Set days (1-365) before deletion.
 
-Patterns that have been in the archive longer than the specified days will be permanently deleted. The cleanup runs:
-- Daily at midnight
-- On server startup
+</div>
 
-:::tip
-Auto-delete is useful if you want a grace period to recover accidentally deleted patterns, but don't want the archive to grow indefinitely.
-:::
+</div>
+
+---
 
 ## Summary
 
-| Mode | What happens when you delete |
-|------|------------------------------|
-| **Default (Archive)** | Pattern moves to archive, can be restored |
-| **Enable delete ON** | Pattern is permanently deleted immediately |
-| **Auto-delete ON** | Archived patterns are deleted after X days |
+| Mode | What Happens |
+|------|--------------|
+| **Default** | Pattern → Archive (recoverable) |
+| **Enable delete** | Pattern → Gone forever |
+| **Auto-delete** | Archive clears after X days |
+
+:::tip
+Auto-delete gives you a grace period without manual cleanup.
+:::

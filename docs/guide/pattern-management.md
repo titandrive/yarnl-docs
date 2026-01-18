@@ -6,128 +6,91 @@ description: Import, organize, and manage your pattern library
 
 # Pattern Management
 
-Learn how to build and organize your pattern library in Yarnl.
+Build and organize your pattern library.
+
+---
 
 ## Importing Patterns
 
-### Single Pattern Upload
+<div className="steps-grid">
 
-1. Click the **Add Pattern** button
-2. Select a PDF file from your computer
-3. The pattern is added to your library
+<div className="step-box">
+
+### Single Upload
+
+Click **Add Pattern** → select a PDF
+
+</div>
+
+<div className="step-box">
 
 ### Bulk Import
 
-Have a folder full of patterns? Import them all at once:
+Select multiple files with Ctrl/Cmd+click
 
-1. Click **Add Pattern**
-2. Select multiple PDF files (Ctrl/Cmd+click or Shift+click)
-3. All selected patterns are imported simultaneously
+</div>
 
-:::tip
-Bulk import is great for migrating from another system or adding a batch of newly purchased patterns.
-:::
+<div className="step-box">
 
-### Creating Markdown Patterns
+### Create New
 
-Write your own patterns directly in Yarnl:
+**Add Pattern** → **Create New** → write in Markdown
 
-1. Click **Add Pattern** → **Create New**
-2. Enter a title for your pattern
-3. Write your pattern content using Markdown syntax
-4. Click **Save**
+</div>
 
-#### Supported Markdown Features
+</div>
 
-- **Headers** (`#`, `##`, `###`) for sections
-- **Bold** (`**text**`) and *italic* (`*text*`)
-- **Numbered lists** for row-by-row instructions
-- **Bullet lists** for materials and notes
-- **Tables** for size charts
-- **Code blocks** for abbreviation references
+---
 
-## Organizing Your Library
+## Categories
 
-### Categories
+Group patterns by type:
 
-Categories are broad groupings for your patterns:
+| Category | Examples |
+|----------|----------|
+| **Amigurumi** | Stuffed animals, dolls, toys |
+| **Wearables** | Sweaters, hats, scarves |
+| **Home Decor** | Blankets, pillows, coasters |
+| **Accessories** | Bags, jewelry, keychains |
 
-| Category | Example Patterns |
-|----------|------------------|
-| Amigurumi | Stuffed animals, dolls, toys |
-| Wearables | Sweaters, hats, scarves, gloves |
-| Home Decor | Blankets, pillows, coasters |
-| Accessories | Bags, jewelry, keychains |
-| Micro | Tiny amigurumi, miniatures |
+---
 
-**To assign a category:**
-1. Open the pattern details
-2. Select a category from the dropdown
-3. The pattern is automatically sorted into that category folder
+## Hashtags
 
-### Hashtags
+Add flexible tags for filtering:
 
-Hashtags provide flexible, cross-cutting organization:
+`#beginner` `#intermediate` `#advanced` `#quick-project` `#gift` `#baby` `#holiday`
 
-**To add hashtags:**
-1. Open the pattern details
-2. Type hashtags in the tags field (e.g., `#beginner #quick #gift`)
-3. Save your changes
+---
 
-**Popular hashtag ideas:**
-- Skill level: `#beginner` `#intermediate` `#advanced`
-- Time: `#quick-project` `#weekend` `#long-term`
-- Purpose: `#gift` `#holiday` `#baby` `#pet`
-- Status: `#modified` `#tested` `#frogged`
-
-### Pattern Status
-
-Track where each pattern is in your workflow:
+## Pattern Status
 
 | Status | Meaning |
 |--------|---------|
-| **New** | Just added, haven't started |
-| **In Progress** | Currently working on it |
-| **Completed** | Finished! |
-| **Favorite** | One of your go-to patterns |
+| **New** | Just added |
+| **In Progress** | Currently working |
+| **Completed** | Finished |
+| **Favorite** | Go-to patterns |
 
-**Quick actions:**
-- Click the **heart icon** to toggle favorite
-- Click the **status badge** to cycle through statuses
+**Quick actions:** Click the heart icon or status badge to change.
 
-## Searching & Filtering
+---
 
-### Search
+## Search & Filter
 
-Use the search bar to find patterns by:
-- Pattern name
-- Keywords in the content
-- Hashtags (prefix with `#`)
+- **Search** by name, content, or hashtags
+- **Filter** by category, status, or type (PDF/Markdown)
+- Combine filters to find exactly what you need
 
-### Filters
+---
 
-Narrow down your library with filters:
+## Auto-Organization
 
-- **By Category** — Show only Amigurumi, Wearables, etc.
-- **By Status** — Show only In Progress, Favorites, etc.
-- **By Type** — Show only PDFs or Markdown patterns
-
-Combine multiple filters to find exactly what you're looking for.
-
-## Automatic Folder Organization
-
-When you assign a category to a pattern, Yarnl can automatically organize it into a folder structure:
+Patterns automatically sort into folders by category:
 
 ```
 📁 Patterns
 ├── 📁 Amigurumi
-│   ├── Teddy Bear.pdf
-│   └── Bunny.pdf
 ├── 📁 Wearables
-│   ├── Winter Hat.pdf
-│   └── Mittens.md
 └── 📁 Uncategorized
-    └── Mystery Pattern.pdf
 ```
-
-This keeps your library tidy without manual file management.

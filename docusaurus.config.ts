@@ -42,6 +42,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/titandrive/yarnl-docs/tree/main/',
+          sidebarCollapsed: false,
         },
         blog: {
           showReadingTime: true,

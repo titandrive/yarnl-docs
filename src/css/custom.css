@@ -512,3 +512,56 @@ html:not([data-theme='dark']) .navbar__link[href="https://github.com/titandrive/
     padding: 3rem 1.5rem;
   }
 }
+
+/* ===== FEATURES PAGE GRID ===== */
+
+.features-grid-docs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.feature-box {
+  background: var(--yarnl-card);
+  border: 1px solid var(--yarnl-card-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+html:not([data-theme='dark']) .feature-box {
+  background: white;
+  border-color: #e9e7f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.feature-box:hover {
+  transform: translateY(-3px);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 8px 24px rgba(167, 139, 250, 0.15);
+}
+
+.feature-box h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin: 0 0 0.75rem;
+}
+
+.feature-box p {
+  font-size: 0.9rem;
+  color: var(--yarnl-text-dim);
+  margin: 0;
+  line-height: 1.6;
+}
+
+html:not([data-theme='dark']) .feature-box p {
+  color: #64607d;
+}
+
+@media (max-width: 600px) {
+  .features-grid-docs {
+    grid-template-columns: 1fr;
+  }
+}

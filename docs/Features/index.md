@@ -95,5 +95,5 @@ See your crafting journey at a glance.
 ---
 
 :::tip Ready to get started?
-Check out the [Documentation](/docs/Manual/installation) for detailed guides on setting up and using Yarnl.
+Check out the [Documentation](/docs/guide/installation) for detailed guides on setting up and using Yarnl.
 :::

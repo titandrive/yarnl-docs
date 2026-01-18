@@ -6,6 +6,35 @@
 
 :root {
   /* Purple palette from the app */
+  --ifm-color-primary: #7c3aed;
+  --ifm-color-primary-dark: #6d28d9;
+  --ifm-color-primary-darker: #5b21b6;
+  --ifm-color-primary-darkest: #4c1d95;
+  --ifm-color-primary-light: #8b5cf6;
+  --ifm-color-primary-lighter: #a78bfa;
+  --ifm-color-primary-lightest: #c4b5fd;
+
+  /* Light mode - muted purple-gray palette */
+  --ifm-background-color: #e8e6f0;
+  --ifm-navbar-background-color: #dcd9e8;
+  --ifm-font-family-base: 'JetBrains Mono', monospace;
+  --ifm-heading-font-family: 'JetBrains Mono', monospace;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(124, 58, 237, 0.15);
+
+  /* Custom vars - light mode */
+  --yarnl-dark: #1e1b2e;
+  --yarnl-darker: #13111c;
+  --yarnl-purple: #7c3aed;
+  --yarnl-purple-dim: rgba(124, 58, 237, 0.12);
+  --yarnl-lavender: #a78bfa;
+  --yarnl-text: #2d2a3e;
+  --yarnl-text-dim: #5c5775;
+  --yarnl-card: #d4d1e3;
+  --yarnl-card-border: #c5c1d6;
+}
+
+[data-theme='dark'] {
   --ifm-color-primary: #a78bfa;
   --ifm-color-primary-dark: #8b5cf6;
   --ifm-color-primary-darker: #7c3aed;
@@ -13,32 +42,16 @@
   --ifm-color-primary-light: #c4b5fd;
   --ifm-color-primary-lighter: #ddd6fe;
   --ifm-color-primary-lightest: #ede9fe;
-
-  /* Light mode - keep it light but with purple accents */
-  --ifm-background-color: #faf9fc;
-  --ifm-navbar-background-color: #ffffff;
-  --ifm-font-family-base: 'JetBrains Mono', monospace;
-  --ifm-heading-font-family: 'JetBrains Mono', monospace;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(167, 139, 250, 0.1);
-
-  /* Custom vars */
-  --yarnl-dark: #1e1b2e;
-  --yarnl-darker: #13111c;
+  --ifm-background-color: #13111c;
+  --ifm-navbar-background-color: #1e1b2e;
+  --ifm-footer-background-color: #13111c;
+  --docusaurus-highlighted-code-line-bg: rgba(167, 139, 250, 0.2);
   --yarnl-purple: #a78bfa;
   --yarnl-purple-dim: rgba(167, 139, 250, 0.15);
-  --yarnl-lavender: #c4b5fd;
   --yarnl-text: #e2e0eb;
   --yarnl-text-dim: #9894a8;
   --yarnl-card: #2a2740;
   --yarnl-card-border: #3d3859;
-}
-
-[data-theme='dark'] {
-  --ifm-background-color: var(--yarnl-darker);
-  --ifm-navbar-background-color: var(--yarnl-dark);
-  --ifm-footer-background-color: var(--yarnl-darker);
-  --docusaurus-highlighted-code-line-bg: rgba(167, 139, 250, 0.2);
 }
 
 /* ===== HOMEPAGE STYLES ===== */
@@ -163,7 +176,7 @@
 }
 
 html:not([data-theme='dark']) .features-section {
-  background: #f8f7fc;
+  background: #dbd8e9;
 }
 
 .features-inner {
@@ -194,7 +207,7 @@ html:not([data-theme='dark']) .features-header h2 {
 }
 
 html:not([data-theme='dark']) .features-header p {
-  color: #64607d;
+  color: var(--yarnl-text-dim);
 }
 
 .features-grid {
@@ -212,9 +225,9 @@ html:not([data-theme='dark']) .features-header p {
 }
 
 html:not([data-theme='dark']) .feature-card {
-  background: white;
-  border-color: #e9e7f0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  background: var(--yarnl-card);
+  border-color: var(--yarnl-card-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .feature-card:hover {
@@ -259,7 +272,7 @@ html:not([data-theme='dark']) .feature-card h3 {
 }
 
 html:not([data-theme='dark']) .feature-card p {
-  color: #64607d;
+  color: var(--yarnl-text-dim);
 }
 
 /* App Preview Section */
@@ -269,7 +282,7 @@ html:not([data-theme='dark']) .feature-card p {
 }
 
 html:not([data-theme='dark']) .preview-section {
-  background: white;
+  background: #e8e6f0;
 }
 
 .preview-inner {
@@ -300,7 +313,7 @@ html:not([data-theme='dark']) .preview-content h2 {
 }
 
 html:not([data-theme='dark']) .preview-content p {
-  color: #64607d;
+  color: var(--yarnl-text-dim);
 }
 
 .preview-list {
@@ -344,8 +357,8 @@ html:not([data-theme='dark']) .preview-list li {
 }
 
 html:not([data-theme='dark']) .preview-image {
-  border-color: #e9e7f0;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  border-color: var(--yarnl-card-border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
 /* CTA Section */
@@ -395,7 +408,7 @@ html:not([data-theme='dark']) .preview-image {
 /* Navbar */
 .navbar {
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: rgba(220, 217, 232, 0.95) !important;
 }
 
 [data-theme='dark'] .navbar {
@@ -531,9 +544,9 @@ html:not([data-theme='dark']) .navbar__link[href="https://github.com/titandrive/
 }
 
 html:not([data-theme='dark']) .feature-box {
-  background: white;
-  border-color: #e9e7f0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  background: var(--yarnl-card);
+  border-color: var(--yarnl-card-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .feature-box:hover {
@@ -557,7 +570,7 @@ html:not([data-theme='dark']) .feature-box {
 }
 
 html:not([data-theme='dark']) .feature-box p {
-  color: #64607d;
+  color: var(--yarnl-text-dim);
 }
 
 @media (max-width: 600px) {
@@ -586,8 +599,8 @@ html:not([data-theme='dark']) .feature-box p {
 
 html:not([data-theme='dark']) .step-box,
 html:not([data-theme='dark']) .option-box {
-  background: #f8f7fc;
-  border-color: #e9e7f0;
+  background: var(--yarnl-card);
+  border-color: var(--yarnl-card-border);
 }
 
 .step-box h3,
@@ -613,7 +626,7 @@ html:not([data-theme='dark']) .step-box ol,
 html:not([data-theme='dark']) .step-box ul,
 html:not([data-theme='dark']) .option-box p,
 html:not([data-theme='dark']) .option-box ul {
-  color: #64607d;
+  color: var(--yarnl-text-dim);
 }
 
 .info-box {
@@ -635,11 +648,11 @@ html:not([data-theme='dark']) .option-box ul {
 }
 
 html:not([data-theme='dark']) .info-box {
-  background: #ede9fe;
+  background: rgba(124, 58, 237, 0.15);
 }
 
 html:not([data-theme='dark']) .info-box.success {
-  background: #dcfce7;
+  background: rgba(34, 197, 94, 0.15);
 }
 
 @media (max-width: 600px) {

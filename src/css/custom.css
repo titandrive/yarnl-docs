@@ -410,18 +410,21 @@ html:not([data-theme='dark']) .preview-image {
   font-weight: 700;
 }
 
+/* Hide external link icons globally */
+svg[class*="iconExternalLink"],
+a svg[class*="iconExternalLink"],
+.navbar__link svg[class*="iconExternalLink"],
+.menu__link svg[class*="iconExternalLink"],
+.footer__link-item svg[class*="iconExternalLink"],
+a[target="_blank"] > svg,
+.navbar__link > svg,
+.menu__link > svg,
+.footer__link-item > svg {
+  display: none !important;
+}
+
 /* Desktop navbar - GitHub icon styling (only on desktop to not break mobile menu) */
 @media (min-width: 997px) {
-  /* Hide external link icon on Demo link */
-  .navbar__link[href="https://demo.yarnl.com"] svg {
-    display: none !important;
-  }
-
-  /* GitHub link - hide default icon and add GitHub logo */
-  .navbar__link[href="https://github.com/titandrive/yarnl"] svg[class*="iconExternalLink"] {
-    display: none !important;
-  }
-
   .navbar__link[href="https://github.com/titandrive/yarnl"] {
     font-size: 0;
   }
@@ -442,10 +445,6 @@ html:not([data-theme='dark']) .preview-image {
 }
 
 /* Mobile sidebar - GitHub icon styling */
-.navbar-sidebar .menu__link[href="https://github.com/titandrive/yarnl"] svg {
-  display: none !important;
-}
-
 .navbar-sidebar .menu__link[href="https://github.com/titandrive/yarnl"]::after {
   content: '';
   display: inline-block;
@@ -466,16 +465,7 @@ html:not([data-theme='dark']) .navbar-sidebar .menu__link[href="https://github.c
   background: var(--yarnl-darker);
 }
 
-/* Footer - hide external link icon on Demo */
-.footer__link-item[href="https://demo.yarnl.com"] svg {
-  display: none !important;
-}
-
 /* Footer - GitHub link with logo */
-.footer__link-item[href="https://github.com/titandrive/yarnl"] svg {
-  display: none !important;
-}
-
 .footer__link-item[href="https://github.com/titandrive/yarnl"] {
   display: inline-flex;
   align-items: center;
@@ -669,4 +659,12 @@ html:not([data-theme='dark']) .info-box.success {
   .options-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Force hide external link icons - placed at end for highest priority */
+[class*="iconExternalLink"] {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  visibility: hidden !important;
 }

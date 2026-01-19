@@ -93,12 +93,14 @@ export default function Home(): ReactNode {
         {/* Hero */}
         <section className="hero-section">
           <div className="hero-inner">
-            <img
-              src="/img/yarnboi.png"
-              alt="Yarnl mascot"
-              className="hero-mascot"
-            />
-            <h1 className="hero-title">Yarnl</h1>
+            <div className="hero-title-row">
+              <h1 className="hero-title">Yarnl</h1>
+              <img
+                src="/img/yarnboi.png"
+                alt="Yarnl mascot"
+                className="hero-mascot"
+              />
+            </div>
             <p className="hero-tagline">Your self-hosted crochet companion</p>
             <div className="hero-buttons">
               <Link className="btn-primary" to="/docs/guide/installation">

@@ -107,6 +107,9 @@ export default function Home(): ReactNode {
               <Link className="btn-secondary" href="https://demo.yarnl.com">
                 Try the Demo
               </Link>
+              <Link className="btn-secondary" to="/docs/guide">
+                Read the Docs
+              </Link>
             </div>
           </div>
         </section>

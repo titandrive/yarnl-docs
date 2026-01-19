@@ -109,7 +109,7 @@ export default function Home(): ReactNode {
               <Link className="btn-secondary" href="https://demo.yarnl.com">
                 Try the Demo
               </Link>
-              <Link className="btn-secondary" to="/docs/guide/getting-started">
+              <Link className="btn-secondary" to="/docs/about">
                 Read the Docs
               </Link>
             </div>
@@ -176,7 +176,7 @@ export default function Home(): ReactNode {
             <h2>Ready to get organized?</h2>
             <p>Yarnl is free, open source, and self-hosted. Set it up in minutes.</p>
             <Link className="cta-button" to="/docs/guide/installation">
-              Read the Docs
+              Get Started
             </Link>
           </div>
         </section>

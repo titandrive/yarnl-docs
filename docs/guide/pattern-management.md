@@ -89,8 +89,8 @@ Add flexible tags for filtering:
 Patterns automatically sort into folders by category:
 
 ```
-📁 Patterns
-├── 📁 Amigurumi
-├── 📁 Wearables
-└── 📁 Uncategorized
+Patterns
+├── Amigurumi
+├── Wearables
+└── Uncategorized
 ```

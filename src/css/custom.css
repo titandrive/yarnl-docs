@@ -493,17 +493,15 @@ html:not([data-theme='dark']) .preview-list li {
 }
 
 .preview-list li::before {
-  content: '✓';
+  content: '';
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   background: var(--ifm-color-primary);
-  color: white;
   border-radius: 50%;
-  font-size: 0.75rem;
-  font-weight: bold;
+  flex-shrink: 0;
 }
 
 .preview-image {

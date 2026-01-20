@@ -96,7 +96,7 @@ export default function Home(): ReactNode {
             <div className="hero-title-row">
               <h1 className="hero-title">Yarnl</h1>
               <img
-                src="/img/yarnboi.png"
+                src="/img/mascot.png"
                 alt="Yarnl mascot"
                 className="hero-mascot"
               />

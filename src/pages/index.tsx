@@ -1,6 +1,7 @@
 import type {ReactNode} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import {useColorMode} from '@docusaurus/theme-common';
 
 function Icon({name}: {name: string}): ReactNode {
   const icons: Record<string, ReactNode> = {
@@ -84,6 +85,9 @@ const features = [
 ];
 
 export default function Home(): ReactNode {
+  const {colorMode} = useColorMode();
+  const mascotSrc = colorMode === 'dark' ? '/img/mascot.png' : '/img/mascot-light.png';
+
   return (
     <Layout
       title="Home"
@@ -96,7 +100,7 @@ export default function Home(): ReactNode {
             <div className="hero-title-row">
               <h1 className="hero-title">Yarnl</h1>
               <img
-                src="/img/mascot.png"
+                src={mascotSrc}
                 alt="Yarnl mascot"
                 className="hero-mascot"
               />

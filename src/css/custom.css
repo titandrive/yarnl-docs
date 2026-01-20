@@ -154,7 +154,7 @@
 
 /* Screenshot Section */
 .screenshot-section {
-  padding: 0 2rem 5rem;
+  padding: 1.5rem 2rem 5rem;
   position: relative;
 }
 
@@ -249,7 +249,7 @@
 
 .carousel-caption {
   text-align: center;
-  color: rgba(255, 255, 255, 0.85);
+  color: white;
   font-size: 1.1rem;
   margin: 0;
   padding-top: 1rem;
@@ -257,10 +257,6 @@
   bottom: -3.5rem;
   left: 0;
   right: 0;
-}
-
-html:not([data-theme='dark']) .carousel-caption {
-  color: var(--yarnl-text);
 }
 
 .screenshot-modal {

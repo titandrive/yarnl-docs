@@ -23,6 +23,28 @@ Never lose your progress.
 
 ---
 
+## Backup Structure
+
+When you create a backup with notes included, the ZIP file contains:
+
+```
+yarnl-backup-2026-01-20T12-00-00.zip
+├── database.json
+├── settings.json
+├── patterns/
+│   └── [category]/
+│       ├── *.pdf (if PDF patterns included)
+│       └── *.md (if markdown patterns included)
+├── images/            (if markdown patterns included)
+├── archive/           (if archive included)
+└── notes/             (if notes included)
+    └── *.md
+```
+
+You can choose what to include when creating a backup—patterns, notes, and archives are optional.
+
+---
+
 ## Creating Backups
 
 <div className="steps-grid">

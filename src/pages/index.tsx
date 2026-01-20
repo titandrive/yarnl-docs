@@ -1,7 +1,8 @@
 import type {ReactNode} from 'react';
+import {useState, useEffect} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
-import {useColorMode} from '@docusaurus/theme-common';
+import ThemedImage from '@theme/ThemedImage';
 
 function Icon({name}: {name: string}): ReactNode {
   const icons: Record<string, ReactNode> = {
@@ -84,12 +85,112 @@ const features = [
   },
 ];
 
-export default function Home(): ReactNode {
-  const {colorMode} = useColorMode();
-  const mascotSrc = colorMode === 'dark' ? '/img/mascot.png' : '/img/mascot-light.png';
-  const libraryScreenshot = colorMode === 'dark' ? '/img/screenshot-library.png' : '/img/screenshot-library-light.png';
-  const patternScreenshot = colorMode === 'dark' ? '/img/screenshot-pattern.png' : '/img/screenshot-pattern-light.png';
+function ScreenshotCarousel(): ReactNode {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
 
+  const screenshots = [
+    {
+      light: '/img/screenshots/screenshot-library-light.png',
+      dark: '/img/screenshots/screenshot-library.png',
+      alt: 'Yarnl pattern library',
+      caption: 'Organize your pattern collection with categories and tags'
+    },
+    {
+      light: '/img/screenshots/screenshot-pattern-light.png',
+      dark: '/img/screenshots/screenshot-pattern.png',
+      alt: 'Pattern view with row counter',
+      caption: 'Track your progress with built-in counters and timers'
+    },
+    {
+      light: '/img/screenshots/screenshot-note-light.png',
+      dark: '/img/screenshots/screenshot-note.png',
+      alt: 'Pattern notes and annotations',
+      caption: 'Add notes and keep track of modifications'
+    },
+    {
+      light: '/img/screenshots/screenshot-upload-light.png',
+      dark: '/img/screenshots/screenshot-upload.png',
+      alt: 'Upload and import patterns',
+      caption: 'Import PDFs or create patterns in Markdown'
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % screenshots.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + screenshots.length) % screenshots.length);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (event.key === 'ArrowRight') {
+        nextSlide();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  return (
+    <>
+      <div className="screenshot-carousel">
+        <button className="carousel-btn carousel-btn-prev" onClick={prevSlide} aria-label="Previous screenshot">
+          ‹
+        </button>
+        <div onClick={() => setIsZoomed(true)} style={{ cursor: 'zoom-in' }}>
+          <ThemedImage
+            alt={screenshots[currentIndex].alt}
+            sources={{
+              light: screenshots[currentIndex].light,
+              dark: screenshots[currentIndex].dark,
+            }}
+            className="screenshot-main"
+          />
+        </div>
+        <button className="carousel-btn carousel-btn-next" onClick={nextSlide} aria-label="Next screenshot">
+          ›
+        </button>
+        <div className="carousel-dots">
+          {screenshots.map((_, index) => (
+            <button
+              key={index}
+              className={`carousel-dot ${index === currentIndex ? 'active' : ''}`}
+              onClick={() => setCurrentIndex(index)}
+              aria-label={`Go to screenshot ${index + 1}`}
+            />
+          ))}
+        </div>
+        <p className="carousel-caption">{screenshots[currentIndex].caption}</p>
+      </div>
+
+      {isZoomed && (
+        <div className="screenshot-modal" onClick={() => setIsZoomed(false)}>
+          <div className="screenshot-modal-content">
+            <button className="screenshot-modal-close" onClick={() => setIsZoomed(false)} aria-label="Close">
+              ×
+            </button>
+            <ThemedImage
+              alt={screenshots[currentIndex].alt}
+              sources={{
+                light: screenshots[currentIndex].light,
+                dark: screenshots[currentIndex].dark,
+              }}
+              className="screenshot-modal-image"
+            />
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
+export default function Home(): ReactNode {
   return (
     <Layout
       title="Home"
@@ -101,9 +202,12 @@ export default function Home(): ReactNode {
           <div className="hero-inner">
             <div className="hero-title-row">
               <h1 className="hero-title">Yarnl</h1>
-              <img
-                src={mascotSrc}
+              <ThemedImage
                 alt="Yarnl mascot"
+                sources={{
+                  light: '/img/mascot-light.png',
+                  dark: '/img/mascot.png',
+                }}
                 className="hero-mascot"
               />
             </div>
@@ -125,11 +229,7 @@ export default function Home(): ReactNode {
         {/* Screenshot */}
         <section className="screenshot-section">
           <div className="screenshot-container">
-            <img
-              src={libraryScreenshot}
-              alt="Yarnl pattern library"
-              className="screenshot-main"
-            />
+            <ScreenshotCarousel />
           </div>
         </section>
 
@@ -168,9 +268,12 @@ export default function Home(): ReactNode {
                 <li>Notes and annotations</li>
               </ul>
             </div>
-            <img
-              src={patternScreenshot}
+            <ThemedImage
               alt="Pattern view with row counter"
+              sources={{
+                light: '/img/screenshots/screenshot-pattern-light.png',
+                dark: '/img/screenshots/screenshot-pattern.png',
+              }}
               className="preview-image"
             />
           </div>

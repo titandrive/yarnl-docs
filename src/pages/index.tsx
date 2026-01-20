@@ -54,34 +54,34 @@ function Icon({name}: {name: string}): ReactNode {
 
 const features = [
   {
+    icon: 'server',
+    title: 'Self-Hosted',
+    description: 'Host Yarnl on your own server. Free forever with no subscriptions. Your data stays private and fully portable.',
+  },
+  {
     icon: 'document',
-    title: 'PDF Pattern Support',
-    description: 'Import your pattern PDFs directly. Page through them while tracking your progress.',
+    title: 'Pattern Library',
+    description: 'Bulk import patterns, organize with categories & hashtags, and find anything instantly with search and filters.',
   },
   {
     icon: 'counter',
-    title: 'Row Counter',
-    description: 'Built-in row counter that stays with your pattern. Never lose your place again.',
+    title: 'Pattern Viewer',
+    description: 'A distraction-free crocheting experience with everything you need and nothing you don\'t.',
   },
   {
     icon: 'tag',
-    title: 'Categories & Tags',
-    description: 'Organize patterns by type, difficulty, or any custom tags you want.',
+    title: 'Backups',
+    description: 'Automatic backups that save all of your data. No more worrying about losing your place or favorite pattern again.',
   },
   {
     icon: 'clock',
-    title: 'Time Tracking',
-    description: 'See how long you spend on each project. Track your crafting journey.',
+    title: 'Keyboard Shortcuts',
+    description: 'Fully customizable keyboard shortcuts for counters, timer, navigation, and more. Yarnl also supports Bluetooth controllers.',
   },
   {
     icon: 'search',
-    title: 'Search & Filter',
-    description: 'Find any pattern instantly. Filter by status, category, or search by name.',
-  },
-  {
-    icon: 'server',
-    title: 'Self-Hosted',
-    description: 'Your data stays yours. Host it yourself with Docker in minutes.',
+    title: 'Customizable UI',
+    description: 'Nearly every part of the UI is customizable. Choose from tons of themes and fonts. You can even choose your favorite mascot.',
   },
 ];
 
@@ -237,8 +237,8 @@ export default function Home(): ReactNode {
         <section className="features-section">
           <div className="features-inner">
             <div className="features-header">
-              <h2>Everything you need to stay organized</h2>
-              <p>Built by crafters, for crafters</p>
+              <h2>The perfect crocheting companion</h2>
+              <p>Made just for you</p>
             </div>
             <div className="features-grid">
               {features.map((feature, idx) => (
@@ -259,12 +259,12 @@ export default function Home(): ReactNode {
               <h2>Focus on your craft, not your tools</h2>
               <p>
                 View your patterns with a built-in PDF reader, track rows with a tap,
-                and pick up exactly where you left off—even weeks later.
+                and pick up exactly where you left off, even weeks later.
               </p>
               <ul className="preview-list">
                 <li>Page-by-page PDF viewing</li>
                 <li>Persistent row counter</li>
-                <li>Time tracking per project</li>
+                <li>Time tracking per pattern</li>
                 <li>Notes and annotations</li>
               </ul>
             </div>
@@ -282,8 +282,8 @@ export default function Home(): ReactNode {
         {/* CTA */}
         <section className="cta-section">
           <div className="cta-inner">
-            <h2>Ready to get organized?</h2>
-            <p>Yarnl is free, open source, and self-hosted. Set it up in minutes.</p>
+            <h2>Ready to start crocheting?</h2>
+            <p>Yarnl is free, open source, and self-hosted.<br />Get started in minutes.</p>
             <Link className="cta-button" to="/docs/guide/installation">
               Get Started
             </Link>

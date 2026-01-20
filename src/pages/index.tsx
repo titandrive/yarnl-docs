@@ -94,25 +94,25 @@ function ScreenshotCarousel(): ReactNode {
       light: '/img/screenshots/screenshot-library-light.png',
       dark: '/img/screenshots/screenshot-library.png',
       alt: 'Yarnl pattern library',
-      caption: 'Organize your pattern collection with categories and tags'
+      caption: 'Organize and manage your entire pattern library'
     },
     {
       light: '/img/screenshots/screenshot-pattern-light.png',
       dark: '/img/screenshots/screenshot-pattern.png',
       alt: 'Pattern view with row counter',
-      caption: 'Track your progress with built-in counters and timers'
+      caption: 'Never lose track of what row you\'re on again'
     },
     {
       light: '/img/screenshots/screenshot-note-light.png',
       dark: '/img/screenshots/screenshot-note.png',
       alt: 'Pattern notes and annotations',
-      caption: 'Add notes and keep track of modifications'
+      caption: 'Create notes (or full patterns) using Markdown'
     },
     {
       light: '/img/screenshots/screenshot-upload-light.png',
       dark: '/img/screenshots/screenshot-upload.png',
       alt: 'Upload and import patterns',
-      caption: 'Import PDFs or create patterns in Markdown'
+      caption: 'Import and organize new patterns in just a few clicks'
     }
   ];
 

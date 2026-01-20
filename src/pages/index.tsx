@@ -87,6 +87,8 @@ const features = [
 export default function Home(): ReactNode {
   const {colorMode} = useColorMode();
   const mascotSrc = colorMode === 'dark' ? '/img/mascot.png' : '/img/mascot-light.png';
+  const libraryScreenshot = colorMode === 'dark' ? '/img/screenshot-library.png' : '/img/screenshot-library-light.png';
+  const patternScreenshot = colorMode === 'dark' ? '/img/screenshot-pattern.png' : '/img/screenshot-pattern-light.png';
 
   return (
     <Layout
@@ -124,7 +126,7 @@ export default function Home(): ReactNode {
         <section className="screenshot-section">
           <div className="screenshot-container">
             <img
-              src="/img/screenshot-library.png"
+              src={libraryScreenshot}
               alt="Yarnl pattern library"
               className="screenshot-main"
             />
@@ -167,7 +169,7 @@ export default function Home(): ReactNode {
               </ul>
             </div>
             <img
-              src="/img/screenshot-pattern.png"
+              src={patternScreenshot}
               alt="Pattern view with row counter"
               className="preview-image"
             />

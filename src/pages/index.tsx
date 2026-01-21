@@ -327,6 +327,62 @@ function SettingsCarousel(): ReactNode {
   return <SmallCarousel screenshots={settings} title="Customize Everything" />;
 }
 
+function PreviewSection(): ReactNode {
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  return (
+    <>
+      <section className="preview-section">
+        <div className="preview-inner">
+          <div className="preview-content">
+            <h2>Focus on your craft, not your tools</h2>
+            <p>
+              View your patterns with a built-in PDF reader, track rows with a tap,
+              and pick up exactly where you left off, even weeks later.
+            </p>
+            <ul className="preview-list">
+              <li>Row counters. Make as many as you need.</li>
+              <li>Add notes. With full Markdown support.</li>
+              <li>Timer keeps track of your crocheting</li>
+              <li>Custom PDF viewer made just for patterns.</li>
+            </ul>
+          </div>
+          <ThemedImage
+            alt="Pattern view with row counter"
+            sources={{
+              light: '/img/screenshots/notes-numbers-light.png',
+              dark: '/img/screenshots/notes-numbers.png',
+            }}
+            className="preview-image"
+            onClick={() => setIsZoomed(true)}
+            style={{ cursor: 'zoom-in' }}
+          />
+        </div>
+      </section>
+
+      {isZoomed && (
+        <div className="screenshot-modal" onClick={() => setIsZoomed(false)}>
+          <div className="screenshot-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="screenshot-modal-close" onClick={(e) => { e.stopPropagation(); setIsZoomed(false); }} aria-label="Close">
+              ×
+            </button>
+            <ThemedImage
+              alt="Pattern view with row counter"
+              sources={{
+                light: '/img/screenshots/notes-numbers-light.png',
+                dark: '/img/screenshots/notes-numbers.png',
+              }}
+              className="screenshot-modal-image"
+              onClick={() => setIsZoomed(false)}
+              style={{ cursor: 'zoom-out' }}
+            />
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
 export default function Home(): ReactNode {
   return (
     <Layout
@@ -394,31 +450,7 @@ export default function Home(): ReactNode {
         </section>
 
         {/* Pattern View Preview */}
-        <section className="preview-section">
-          <div className="preview-inner">
-            <div className="preview-content">
-              <h2>Focus on your craft, not your tools</h2>
-              <p>
-                View your patterns with a built-in PDF reader, track rows with a tap,
-                and pick up exactly where you left off, even weeks later.
-              </p>
-              <ul className="preview-list">
-                <li>Row counters. Make as many as you need.</li>
-                <li>Add notes. With full Markdown support.</li>
-                <li>Timer keeps track of your crocheting</li>
-                <li>Custom PDF viewer made just for patterns.</li>
-              </ul>
-            </div>
-            <ThemedImage
-              alt="Pattern view with row counter"
-              sources={{
-                light: '/img/screenshots/notes-numbers-light.png',
-                dark: '/img/screenshots/notes-numbers.png',
-              }}
-              className="preview-image"
-            />
-          </div>
-        </section>
+        <PreviewSection />
 
         {/* CTA */}
         <section className="cta-section">

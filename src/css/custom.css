@@ -284,18 +284,19 @@
 .screenshot-modal-content {
   position: relative;
   max-width: 95vw;
-  max-height: 95vh;
+  max-height: calc(95vh - 60px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: default;
   gap: 1rem;
+  padding: 0 60px;
 }
 
 .screenshot-modal-image {
   max-width: 100%;
-  max-height: calc(95vh - 80px);
+  max-height: calc(95vh - 100px);
   object-fit: contain;
   border-radius: 8px;
 }
@@ -311,8 +312,8 @@
 
 .screenshot-modal-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 80px;
   background: rgba(0, 0, 0, 0.6);
   border: none;
   color: white;
@@ -338,10 +339,10 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
   border: none;
-  font-size: 3rem;
+  font-size: 4rem;
   cursor: pointer;
   padding: 0;
   width: 50px;
@@ -349,23 +350,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
   transition: all 0.2s ease;
   z-index: 10000;
+  flex-shrink: 0;
 }
 
 .screenshot-modal-nav:hover {
-  background: rgba(0, 0, 0, 0.8);
   color: white;
-  transform: translateY(-50%) scale(1.1);
+  transform: translateY(-50%) scale(1.15);
 }
 
 .screenshot-modal-nav-prev {
-  left: 2rem;
+  left: 0;
 }
 
 .screenshot-modal-nav-next {
-  right: 2rem;
+  right: 0;
 }
 
 /* Small Carousels */
@@ -387,7 +387,7 @@
   text-align: center;
   color: white;
   font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-weight: 600;
 }
 
@@ -396,7 +396,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   padding: 0 50px;
   max-width: 560px;
   margin-left: auto;
@@ -430,7 +430,7 @@
   position: relative;
   bottom: auto;
   font-size: 1rem;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 

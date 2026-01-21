@@ -19,7 +19,7 @@ Yarnl uses Markdown for custom patterns and pattern notes because:
 - **Readable** — Even without rendering, the text is easy to understand
 - **Lightweight** — Just text, no bloated file sizes
 
-Pattern notes are stored in `notes/` and custom Markdown patterns are stored in `patterns/`. You can edit them directly, back them up, or move them anywhere.
+Pattern notes are stored in `notes/` and custom Markdown patterns are stored in `patterns/`. Because they are simple text files, ou can edit them directly, back them up, or move them anywhere.
 
 ---
 

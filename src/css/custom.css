@@ -250,6 +250,10 @@
   height: 14px;
 }
 
+html:not([data-theme='dark']) .carousel-dot.active {
+  background: rgba(0, 0, 0, 0.45);
+}
+
 .carousel-caption {
   text-align: center;
   color: white;

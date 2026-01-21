@@ -295,22 +295,22 @@ function SmallCarousel({screenshots, title}: {screenshots: Array<{light: string,
 
 function ThemesCarousel(): ReactNode {
   const themes = [
-    { name: 'Aqua', light: '/img/screenshots/themes/aqual-light.png', dark: '/img/screenshots/themes/aqua.png' },
-    { name: 'Coffee', light: '/img/screenshots/themes/coffee-light.png', dark: '/img/screenshots/themes/coffee.png' },
-    { name: 'Cyberpunk', light: '/img/screenshots/themes/cyberpunk-light.png', dark: '/img/screenshots/themes/cyberpunk.png' },
-    { name: 'Dracula', light: '/img/screenshots/themes/dracula-light.png', dark: '/img/screenshots/themes/dracula.png' },
-    { name: 'Forest', light: '/img/screenshots/themes/forest-light.png', dark: '/img/screenshots/themes/forest.png' },
-    { name: 'Halloween', light: '/img/screenshots/themes/haloween-light.png', dark: '/img/screenshots/themes/haloween.png' },
-    { name: 'Lavender', light: '/img/screenshots/themes/lavender-light.png', dark: '/img/screenshots/themes/lavender.png' },
-    { name: 'Midnight', light: '/img/screenshots/themes/midnight-light.png', dark: '/img/screenshots/themes/midnight.png' },
-    { name: 'Minimal', light: '/img/screenshots/themes/minimal-light.png', dark: '/img/screenshots/themes/minimal.png' },
-    { name: 'Ocean', light: '/img/screenshots/themes/ocean-light.png', dark: '/img/screenshots/themes/ocean.png' },
-    { name: 'Slate', light: '/img/screenshots/themes/slate-light.png', dark: '/img/screenshots/themes/slate.png' },
-    { name: 'Sunset', light: '/img/screenshots/themes/sunset-light.png', dark: '/img/screenshots/themes/sunset.png' },
     { name: 'Synthwave', light: '/img/screenshots/themes/synthwave-light.png', dark: '/img/screenshots/themes/synthwave.png' },
+    { name: 'Midnight', light: '/img/screenshots/themes/midnight-light.png', dark: '/img/screenshots/themes/midnight.png' },
+    { name: 'Halloween', light: '/img/screenshots/themes/haloween-light.png', dark: '/img/screenshots/themes/haloween.png' },
+    { name: 'Dracula', light: '/img/screenshots/themes/dracula-light.png', dark: '/img/screenshots/themes/dracula.png' },
+    { name: 'Cyberpunk', light: '/img/screenshots/themes/cyberpunk-light.png', dark: '/img/screenshots/themes/cyberpunk.png' },
+    { name: 'Ocean', light: '/img/screenshots/themes/ocean-light.png', dark: '/img/screenshots/themes/ocean.png' },
+    { name: 'Sunset', light: '/img/screenshots/themes/sunset-light.png', dark: '/img/screenshots/themes/sunset.png' },
+    { name: 'Forest', light: '/img/screenshots/themes/forest-light.png', dark: '/img/screenshots/themes/forest.png' },
+    { name: 'Lavender', light: '/img/screenshots/themes/lavender-light.png', dark: '/img/screenshots/themes/lavender.png' },
+    { name: 'Coffee', light: '/img/screenshots/themes/coffee-light.png', dark: '/img/screenshots/themes/coffee.png' },
+    { name: 'Slate', light: '/img/screenshots/themes/slate-light.png', dark: '/img/screenshots/themes/slate.png' },
+    { name: 'Aqua', light: '/img/screenshots/themes/aqual-light.png', dark: '/img/screenshots/themes/aqua.png' },
+    { name: 'Minimal', light: '/img/screenshots/themes/minimal-light.png', dark: '/img/screenshots/themes/minimal.png' },
   ];
 
-  return <SmallCarousel screenshots={themes} title="Themes" />;
+  return <SmallCarousel screenshots={themes} title="Tons of Themes" />;
 }
 
 function SettingsCarousel(): ReactNode {
@@ -324,7 +324,7 @@ function SettingsCarousel(): ReactNode {
     { name: 'Archive', light: '/img/screenshots/settings/archive-light.png', dark: '/img/screenshots/settings/archive.png' },
   ];
 
-  return <SmallCarousel screenshots={settings} title="Settings" />;
+  return <SmallCarousel screenshots={settings} title="Customize Everything" />;
 }
 
 export default function Home(): ReactNode {
@@ -412,8 +412,8 @@ export default function Home(): ReactNode {
             <ThemedImage
               alt="Pattern view with row counter"
               sources={{
-                light: '/img/screenshots/screenshot-pattern-light.png',
-                dark: '/img/screenshots/screenshot-pattern.png',
+                light: '/img/screenshots/viewer-light.png',
+                dark: '/img/screenshots/viewer.png',
               }}
               className="preview-image"
             />

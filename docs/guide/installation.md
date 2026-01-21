@@ -31,7 +31,10 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./data:/app/data
+      - ./data/patterns:/app/patterns
+      - ./data/notes:/app/notes
+      - ./data/archive:/app/archive
+      - ./data/backups:/app/backups
     restart: unless-stopped
 ```
 

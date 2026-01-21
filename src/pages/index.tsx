@@ -412,8 +412,8 @@ export default function Home(): ReactNode {
             <ThemedImage
               alt="Pattern view with row counter"
               sources={{
-                light: '/img/screenshots/notes-light.png',
-                dark: '/img/screenshots/notes.png',
+                light: '/img/screenshots/notes-numbers-light.png',
+                dark: '/img/screenshots/notes-numbers.png',
               }}
               className="preview-image"
             />

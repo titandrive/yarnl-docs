@@ -25,10 +25,10 @@ Use keyboard shortcuts or a Bluetooth controller to keep your hands on your work
 |--------|----------|-------------|
 | Increase counter | `↑` | Add one to selected counter |
 | Decrease counter | `↓` | Subtract one from selected counter |
+| Next counter | `Tab` | Cycle to next counter |
 | Previous page | `←` | Go back one page |
 | Next page | `→` | Go forward one page |
 | Start/Stop timer | `Space` | Toggle project timer |
-| Next counter | `Tab` | Cycle to next counter |
 | Zoom in | `=` | Increase PDF zoom |
 | Zoom out | `-` | Decrease PDF zoom |
 | Exit viewer | `Esc` | Close and return to library |

@@ -319,7 +319,7 @@ function SettingsCarousel(): ReactNode {
     { name: 'Customize your categories and fonts', light: '/img/screenshots/settings/categories-light.png', dark: '/img/screenshots/settings/categories.png' },
     { name: 'Customize your keyboard shortcuts', light: '/img/screenshots/settings/keyboard-light.png', dark: '/img/screenshots/settings/keyboard.png' },
     { name: 'Easily backup or restore your library', light: '/img/screenshots/settings/backup-light.png', dark: '/img/screenshots/settings/backup.png' },
-    { name: 'Get notified', light: '/img/screenshots/settings/notifications-light.png', dark: '/img/screenshots/settings/notifications.png' },
+    { name: 'Setup Pushover notifications for important events', light: '/img/screenshots/settings/notifications-light.png', dark: '/img/screenshots/settings/notifications.png' },
     { name: 'See your library stats', light: '/img/screenshots/settings/about-light.png', dark: '/img/screenshots/settings/about.png' },
     { name: 'Easily recover deleted patterns', light: '/img/screenshots/settings/archive-light.png', dark: '/img/screenshots/settings/archive.png' },
   ];

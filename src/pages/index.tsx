@@ -91,28 +91,28 @@ function ScreenshotCarousel(): ReactNode {
 
   const screenshots = [
     {
-      light: '/img/screenshots/screenshot-library-light.png',
-      dark: '/img/screenshots/screenshot-library.png',
+      light: '/img/screenshots/home-light.png',
+      dark: '/img/screenshots/home.png',
       alt: 'Yarnl pattern library',
       caption: 'Organize and manage your entire pattern library'
     },
     {
-      light: '/img/screenshots/screenshot-pattern-light.png',
-      dark: '/img/screenshots/screenshot-pattern.png',
+      light: '/img/screenshots/viewer-light.png',
+      dark: '/img/screenshots/viewer.png',
       alt: 'Pattern view with row counter',
       caption: 'Never lose track of what row you\'re on again'
     },
     {
-      light: '/img/screenshots/screenshot-note-light.png',
-      dark: '/img/screenshots/screenshot-note.png',
-      alt: 'Pattern notes and annotations',
-      caption: 'Create notes (or full patterns) using Markdown'
+      light: '/img/screenshots/notes-light.png',
+      dark: '/img/screenshots/notes.png',
+      alt: 'Pattern notes',
+      caption: 'Create notes or full patterns using Markdown'
     },
     {
-      light: '/img/screenshots/screenshot-upload-light.png',
-      dark: '/img/screenshots/screenshot-upload.png',
-      alt: 'Upload and import patterns',
-      caption: 'Import and organize new patterns in just a few clicks'
+      light: '/img/screenshots/info-light.png',
+      dark: '/img/screenshots/info.png',
+      alt: 'Pattern information',
+      caption: 'Track all your pattern details in one place'
     }
   ];
 
@@ -171,7 +171,10 @@ function ScreenshotCarousel(): ReactNode {
 
       {isZoomed && (
         <div className="screenshot-modal" onClick={() => setIsZoomed(false)}>
-          <div className="screenshot-modal-content">
+          <button className="screenshot-modal-nav screenshot-modal-nav-prev" onClick={(e) => { e.stopPropagation(); prevSlide(); }} aria-label="Previous">
+            ‹
+          </button>
+          <div className="screenshot-modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="screenshot-modal-close" onClick={() => setIsZoomed(false)} aria-label="Close">
               ×
             </button>
@@ -183,11 +186,141 @@ function ScreenshotCarousel(): ReactNode {
               }}
               className="screenshot-modal-image"
             />
+            <p className="screenshot-modal-caption">{screenshots[currentIndex].caption}</p>
           </div>
+          <button className="screenshot-modal-nav screenshot-modal-nav-next" onClick={(e) => { e.stopPropagation(); nextSlide(); }} aria-label="Next">
+            ›
+          </button>
         </div>
       )}
     </>
   );
+}
+
+function SmallCarousel({screenshots, title}: {screenshots: Array<{light: string, dark: string, name: string}>, title: string}): ReactNode {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % screenshots.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + screenshots.length) % screenshots.length);
+  };
+
+  useEffect(() => {
+    if (!isZoomed) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (event.key === 'ArrowRight') {
+        nextSlide();
+      } else if (event.key === 'Escape') {
+        setIsZoomed(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isZoomed]);
+
+  return (
+    <>
+      <div className="small-carousel">
+        <h3 className="small-carousel-title">{title}</h3>
+        <div className="small-carousel-content">
+          <button className="carousel-btn carousel-btn-prev" onClick={prevSlide} aria-label="Previous">
+            ‹
+          </button>
+          <div onClick={() => setIsZoomed(true)} style={{ cursor: 'zoom-in' }}>
+            <ThemedImage
+              alt={screenshots[currentIndex].name}
+              sources={{
+                light: screenshots[currentIndex].light,
+                dark: screenshots[currentIndex].dark,
+              }}
+              className="small-carousel-image"
+            />
+          </div>
+          <button className="carousel-btn carousel-btn-next" onClick={nextSlide} aria-label="Next">
+            ›
+          </button>
+        </div>
+        <p className="carousel-caption">{screenshots[currentIndex].name}</p>
+        <div className="carousel-dots">
+          {screenshots.map((_, index) => (
+            <button
+              key={index}
+              className={`carousel-dot ${index === currentIndex ? 'active' : ''}`}
+              onClick={() => setCurrentIndex(index)}
+              aria-label={`Go to ${title} ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {isZoomed && (
+        <div className="screenshot-modal" onClick={() => setIsZoomed(false)}>
+          <button className="screenshot-modal-nav screenshot-modal-nav-prev" onClick={(e) => { e.stopPropagation(); prevSlide(); }} aria-label="Previous">
+            ‹
+          </button>
+          <div className="screenshot-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="screenshot-modal-close" onClick={() => setIsZoomed(false)} aria-label="Close">
+              ×
+            </button>
+            <ThemedImage
+              alt={screenshots[currentIndex].name}
+              sources={{
+                light: screenshots[currentIndex].light,
+                dark: screenshots[currentIndex].dark,
+              }}
+              className="screenshot-modal-image"
+            />
+            <p className="screenshot-modal-caption">{screenshots[currentIndex].name}</p>
+          </div>
+          <button className="screenshot-modal-nav screenshot-modal-nav-next" onClick={(e) => { e.stopPropagation(); nextSlide(); }} aria-label="Next">
+            ›
+          </button>
+        </div>
+      )}
+    </>
+  );
+}
+
+function ThemesCarousel(): ReactNode {
+  const themes = [
+    { name: 'Aqua', light: '/img/screenshots/themes/aqual-light.png', dark: '/img/screenshots/themes/aqua.png' },
+    { name: 'Coffee', light: '/img/screenshots/themes/coffee-light.png', dark: '/img/screenshots/themes/coffee.png' },
+    { name: 'Cyberpunk', light: '/img/screenshots/themes/cyberpunk-light.png', dark: '/img/screenshots/themes/cyberpunk.png' },
+    { name: 'Dracula', light: '/img/screenshots/themes/dracula-light.png', dark: '/img/screenshots/themes/dracula.png' },
+    { name: 'Forest', light: '/img/screenshots/themes/forest-light.png', dark: '/img/screenshots/themes/forest.png' },
+    { name: 'Halloween', light: '/img/screenshots/themes/haloween-light.png', dark: '/img/screenshots/themes/haloween.png' },
+    { name: 'Lavender', light: '/img/screenshots/themes/lavender-light.png', dark: '/img/screenshots/themes/lavender.png' },
+    { name: 'Midnight', light: '/img/screenshots/themes/midnight-light.png', dark: '/img/screenshots/themes/midnight.png' },
+    { name: 'Minimal', light: '/img/screenshots/themes/minimal-light.png', dark: '/img/screenshots/themes/minimal.png' },
+    { name: 'Ocean', light: '/img/screenshots/themes/ocean-light.png', dark: '/img/screenshots/themes/ocean.png' },
+    { name: 'Slate', light: '/img/screenshots/themes/slate-light.png', dark: '/img/screenshots/themes/slate.png' },
+    { name: 'Sunset', light: '/img/screenshots/themes/sunset-light.png', dark: '/img/screenshots/themes/sunset.png' },
+    { name: 'Synthwave', light: '/img/screenshots/themes/synthwave-light.png', dark: '/img/screenshots/themes/synthwave.png' },
+  ];
+
+  return <SmallCarousel screenshots={themes} title="Themes" />;
+}
+
+function SettingsCarousel(): ReactNode {
+  const settings = [
+    { name: 'Appearance', light: '/img/screenshots/settings/appearance-light.png', dark: '/img/screenshots/settings/appearance.png' },
+    { name: 'Categories', light: '/img/screenshots/settings/categories-light.png', dark: '/img/screenshots/settings/categories.png' },
+    { name: 'Keyboard', light: '/img/screenshots/settings/keyboard-light.png', dark: '/img/screenshots/settings/keyboard.png' },
+    { name: 'Backup', light: '/img/screenshots/settings/backup-light.png', dark: '/img/screenshots/settings/backup.png' },
+    { name: 'Notifications', light: '/img/screenshots/settings/notifications-light.png', dark: '/img/screenshots/settings/notifications.png' },
+    { name: 'About', light: '/img/screenshots/settings/about-light.png', dark: '/img/screenshots/settings/about.png' },
+    { name: 'Archive', light: '/img/screenshots/settings/archive-light.png', dark: '/img/screenshots/settings/archive.png' },
+  ];
+
+  return <SmallCarousel screenshots={settings} title="Settings" />;
 }
 
 export default function Home(): ReactNode {
@@ -230,6 +363,10 @@ export default function Home(): ReactNode {
         <section className="screenshot-section">
           <div className="screenshot-container">
             <ScreenshotCarousel />
+          </div>
+          <div className="small-carousels-container">
+            <ThemesCarousel />
+            <SettingsCarousel />
           </div>
         </section>
 

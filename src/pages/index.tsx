@@ -344,7 +344,7 @@ function PreviewSection(): ReactNode {
               <li>Row counters. Make as many as you need.</li>
               <li>Add notes. With full Markdown support.</li>
               <li>Timer keeps track of your crocheting</li>
-              <li>Custom PDF viewer made just for patterns.</li>
+              <li>Custom PDF viewer designed just for crocheting.</li>
             </ul>
           </div>
           <ThemedImage

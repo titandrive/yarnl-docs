@@ -171,11 +171,11 @@ function ScreenshotCarousel(): ReactNode {
 
       {isZoomed && (
         <div className="screenshot-modal" onClick={() => setIsZoomed(false)}>
-          <button className="screenshot-modal-nav screenshot-modal-nav-prev" onClick={(e) => { e.stopPropagation(); prevSlide(); }} aria-label="Previous">
-            ‹
-          </button>
           <div className="screenshot-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="screenshot-modal-close" onClick={() => setIsZoomed(false)} aria-label="Close">
+            <button className="screenshot-modal-nav screenshot-modal-nav-prev" onClick={(e) => { e.stopPropagation(); prevSlide(); }} aria-label="Previous">
+              ‹
+            </button>
+            <button className="screenshot-modal-close" onClick={(e) => { e.stopPropagation(); setIsZoomed(false); }} aria-label="Close">
               ×
             </button>
             <ThemedImage
@@ -185,12 +185,14 @@ function ScreenshotCarousel(): ReactNode {
                 dark: screenshots[currentIndex].dark,
               }}
               className="screenshot-modal-image"
+              onClick={() => setIsZoomed(false)}
+              style={{ cursor: 'zoom-out' }}
             />
             <p className="screenshot-modal-caption">{screenshots[currentIndex].caption}</p>
+            <button className="screenshot-modal-nav screenshot-modal-nav-next" onClick={(e) => { e.stopPropagation(); nextSlide(); }} aria-label="Next">
+              ›
+            </button>
           </div>
-          <button className="screenshot-modal-nav screenshot-modal-nav-next" onClick={(e) => { e.stopPropagation(); nextSlide(); }} aria-label="Next">
-            ›
-          </button>
         </div>
       )}
     </>
@@ -263,11 +265,11 @@ function SmallCarousel({screenshots, title}: {screenshots: Array<{light: string,
 
       {isZoomed && (
         <div className="screenshot-modal" onClick={() => setIsZoomed(false)}>
-          <button className="screenshot-modal-nav screenshot-modal-nav-prev" onClick={(e) => { e.stopPropagation(); prevSlide(); }} aria-label="Previous">
-            ‹
-          </button>
           <div className="screenshot-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="screenshot-modal-close" onClick={() => setIsZoomed(false)} aria-label="Close">
+            <button className="screenshot-modal-nav screenshot-modal-nav-prev" onClick={(e) => { e.stopPropagation(); prevSlide(); }} aria-label="Previous">
+              ‹
+            </button>
+            <button className="screenshot-modal-close" onClick={(e) => { e.stopPropagation(); setIsZoomed(false); }} aria-label="Close">
               ×
             </button>
             <ThemedImage
@@ -277,12 +279,14 @@ function SmallCarousel({screenshots, title}: {screenshots: Array<{light: string,
                 dark: screenshots[currentIndex].dark,
               }}
               className="screenshot-modal-image"
+              onClick={() => setIsZoomed(false)}
+              style={{ cursor: 'zoom-out' }}
             />
             <p className="screenshot-modal-caption">{screenshots[currentIndex].name}</p>
+            <button className="screenshot-modal-nav screenshot-modal-nav-next" onClick={(e) => { e.stopPropagation(); nextSlide(); }} aria-label="Next">
+              ›
+            </button>
           </div>
-          <button className="screenshot-modal-nav screenshot-modal-nav-next" onClick={(e) => { e.stopPropagation(); nextSlide(); }} aria-label="Next">
-            ›
-          </button>
         </div>
       )}
     </>

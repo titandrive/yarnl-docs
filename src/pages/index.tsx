@@ -403,17 +403,17 @@ export default function Home(): ReactNode {
                 and pick up exactly where you left off, even weeks later.
               </p>
               <ul className="preview-list">
-                <li>Page-by-page PDF viewing</li>
-                <li>Persistent row counter</li>
-                <li>Time tracking per pattern</li>
-                <li>Notes and annotations</li>
+                <li>Row counters. Make as many as you need.</li>
+                <li>Add notes. With full Markdown support.</li>
+                <li>Timer keeps track of your crocheting</li>
+                <li>Custom PDF viewer made just for patterns.</li>
               </ul>
             </div>
             <ThemedImage
               alt="Pattern view with row counter"
               sources={{
-                light: '/img/screenshots/viewer-light.png',
-                dark: '/img/screenshots/viewer.png',
+                light: '/img/screenshots/notes-light.png',
+                dark: '/img/screenshots/notes.png',
               }}
               className="preview-image"
             />

@@ -4,9 +4,9 @@ title: Backups & Data
 description: Protect your data with backups
 ---
 
-# Backups & Data
+# Backups & Recovery
 
-Never lose your progress.
+Never lose your progress or your data. Yarnl knows how important your information is and makes it easy to create backups and enact restores. 
 
 ---
 

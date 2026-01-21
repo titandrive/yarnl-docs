@@ -5,7 +5,9 @@
       "Bash(sips:*)",
       "Bash(md5)",
       "Bash(ls:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }

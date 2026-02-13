@@ -67,5 +67,5 @@ Go to **Settings** to:
 
 - [Pattern Management](./pattern-management) — Importing & organizing
 - [Pattern Viewer](./pattern-viewer) — Counters & timer
-- [Keyboard Shortcuts](/settings/keyboard-shortcuts) — Speed up your workflow
+- [Keyboard Shortcuts](../settings/keyboard-shortcuts) — Speed up your workflow
 - [Backups](./backups-and-data) — Protect your data

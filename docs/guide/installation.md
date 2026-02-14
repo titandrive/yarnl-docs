@@ -1,112 +1,90 @@
 ---
 sidebar_position: 0
 title: Installation
-description: Install Yarnl on your own server
+description: How to get started with Yarnl
 ---
-
 # Installation
 
-Get Yarnl running on your own server.
+## Quick Start
+Yarnl is easy to get up and running with Docker. You'll be crocheting in no time. 
 
-<div className="info-box">
+**Prerequisites:** 
+- [Docker](https://docs.docker.com/get-docker/) 
+- Docker Compose
 
-**Requirements:** Linux, macOS, or Windows with 1GB RAM and 1GB storage
+1. Open terminal and run the following command to download and start the [`docker-compose.yml`](https://raw.githubusercontent.com/titandrive/yarnl/main/docker-compose.yml).:
 
-</div>
+```bash
+mkdir yarnl && cd yarnl                # Create a directory for Yarnl
+curl -O https://raw.githubusercontent.com/titandrive/yarnl/main/docker-compose.yml  # Download the compose file
+docker compose up -d                   # Start Yarnl and PostgreSQL
+```
 
----
+2. Open your browser and navigate to `http://localhost:3000`
 
-## Docker (Recommended)
+By default, Yarnl starts in single-user mode with an `admin` account and no password.
 
-The easiest way to get started.
+To configure passwords, timezone, and other options, download the [`.env.example`](https://raw.githubusercontent.com/titandrive/yarnl/main/.env.example) file, rename it to `.env`, and edit as needed before starting.
 
-**1. Create a directory and docker-compose.yml:**
+## Docker Compose
+If you prefer to write the compose file yourself instead of downloading it:
 
 ```yaml
-version: "3.8"
 services:
-  yarnl:
-    image: yarnl/yarnl:latest
-    container_name: yarnl
-    ports:
-      - "3000:3000"
+  postgres:
+    container_name: yarnl-db
+    image: postgres:16-alpine
     volumes:
-      - ./data/patterns:/app/patterns
-      - ./data/notes:/app/notes
-      - ./data/archive:/app/archive
-      - ./data/backups:/app/backups
+      - yarnl-postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-yarnl}
+      - POSTGRES_USER=${POSTGRES_USER:-yarnl}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-yarnl}
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-yarnl}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  yarnl:
+    container_name: yarnl
+    image: titandrive/yarnl:latest
+    ports:
+      - "${PORT:-3000}:3000"
+    volumes:
+      - ./users:/app/users
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=${POSTGRES_DB:-yarnl}
+      - POSTGRES_USER=${POSTGRES_USER:-yarnl}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-yarnl}
+      - ADMIN_USERNAME=${ADMIN_USERNAME:-admin}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-}
+      - TZ=${TZ:-UTC}
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  yarnl-postgres-data:
 ```
-
-**2. Start Yarnl:**
-
-```bash
-docker compose up -d
-```
-
-**3. Open** `http://localhost:3000`
-
-<div className="info-box success">
-
-**To update:** `docker compose pull && docker compose up -d`
-
-</div>
-
----
-
-## Manual Installation
-
-Install from source with Node.js.
-
-```bash
-# Clone and install
-git clone https://github.com/yarnl/yarnl.git
-cd yarnl && npm install
-
-# Build and run
-npm run build && npm start
-```
-
-Open `http://localhost:3000`
-
----
 
 ## Configuration
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `PORT` | Server port | `3000` |
-| `DATA_DIR` | Data directory | `./data` |
+Most configuration is done via settings once Yarnl is up and running. There are a few environment variables available to customize your installation.
 
----
-
-## Reverse Proxy (nginx)
-
-```nginx
-server {
-    listen 443 ssl;
-    server_name yarnl.example.com;
-
-    location / {
-        proxy_pass http://localhost:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-        proxy_set_header Host $host;
-    }
-}
-```
-
----
-
-## Troubleshooting
-
-| Problem | Solution |
-|---------|----------|
-| Port in use | Change `PORT` env variable |
-| Permission errors | Run `chmod -R 755 ./data` |
-| Can't connect | Check firewall, verify port |
-
----
-
-**Next:** [Getting Started](./getting-started)
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `POSTGRES_DB` | `yarnl` | Database name |
+| `POSTGRES_USER` | `yarnl` | Database user |
+| `POSTGRES_PASSWORD` | `yarnl` | Database password |
+| `POSTGRES_HOST` | `postgres` | Database hostname (use default with Docker Compose) |
+| `POSTGRES_PORT` | `5432` | Database port |
+| `ADMIN_USERNAME` | `admin` | Initial admin username |
+| `ADMIN_PASSWORD` | *(empty)* | Admin password (empty = passwordless login) |
+| `PORT` | `3000` | Port exposed on the host |
+| `TZ` | `UTC` | Timezone for scheduled backups |
+| `FORCE_LOCAL_LOGIN` | `false` | Force local login even when OIDC/SSO is configured |

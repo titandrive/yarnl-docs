@@ -92,5 +92,5 @@ Most configuration is done via settings once Yarnl is up and running. There are 
 | `PORT` | `3000` | Port exposed on the host |
 | `NODE_ENV` | `production` | Set to `development` for verbose errors |
 | `TZ` | `UTC` | Timezone for scheduled backups |
-| `BACKUP_PATH` | *(unset)* | Custom backup storage location (see [Backup](#backup--restore)) |
+| `BACKUP_PATH` | *(unset)* | Custom backup storage location (see [Backups](./backups-and-data)) |
 | `FORCE_LOCAL_LOGIN` | `false` | Force local login even when OIDC/SSO is configured |

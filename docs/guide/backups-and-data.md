@@ -6,7 +6,7 @@ description: Protect your data with backups
 
 # Backups & Recovery
 
-Never lose your progress or your data. Yarnl knows how important your information is and makes it easy to create backups and enact restores. 
+Never lose your progress or your data. Yarnl knows how important your information is and makes it easy to create backups and enact restores.
 
 ---
 
@@ -82,18 +82,44 @@ Everything comes back exactly as it was.
 
 ---
 
-## Storage Options
+## Custom Backup Location
 
-| Location | Use Case |
-|----------|----------|
-| **Local** | Same server as Yarnl |
-| **External drive** | Redundancy |
-| **Network/NAS** | Shared storage |
-| **Cloud sync** | Off-site backup |
+By default, backups are stored alongside your user data in `./users/<username>/backups/`. You can redirect backups to a separate drive or NAS using the `BACKUP_PATH` environment variable.
+
+### Configuration
+
+Set the `BACKUP_PATH` environment variable and mount the target path as a volume:
+
+```yaml
+volumes:
+  - ./users:/app/users
+  - /mnt/user/drive:/backups
+environment:
+  - BACKUP_PATH=/backups
+```
+
+Backups will be stored at:
+
+```
+/mnt/user/drive/yarnl-backups/<username>/yarnl-backup-*.zip
+```
+
+### Migration
+
+When `BACKUP_PATH` is added, changed, or removed, Yarnl automatically migrates existing backups to the new location on startup. No manual file moves needed.
 
 :::tip
-Store backups somewhere different from Yarnl itself.
+Store backups somewhere different from Yarnl itself for redundancy.
 :::
+
+---
+
+## Auto-Pruning
+
+Keep your backup storage under control by enabling auto-prune in **Settings** → **Backups**. You can prune by:
+
+- **Count** — keep the last *N* backups
+- **Age** — delete backups older than a set number of days, weeks, or months
 
 ---
 
@@ -111,6 +137,6 @@ Get notified when backups complete or fail.
 
 1. **Enable scheduled backups**
 2. **Keep multiple copies**
-3. **Store off-site**
+3. **Use `BACKUP_PATH`** to store backups on a separate drive from Yarnl
 4. **Test restores** periodically
 5. **Backup before updates**

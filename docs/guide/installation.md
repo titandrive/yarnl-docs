@@ -53,7 +53,9 @@ services:
     ports:
       - "${PORT:-3000}:3000"
     volumes:
-      - ./users:/app/users
+      - ./users:/app/users 
+      # Optional: mount an external path for backups
+      # - /mnt/user/drive:/backups
     environment:
       - POSTGRES_HOST=postgres
       - POSTGRES_PORT=5432
@@ -61,8 +63,10 @@ services:
       - POSTGRES_USER=${POSTGRES_USER:-yarnl}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-yarnl}
       - ADMIN_USERNAME=${ADMIN_USERNAME:-admin}
-      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-} #optional
       - TZ=${TZ:-UTC}
+      # Optional: store backups at a custom path (use with volume mount above)
+      # - BACKUP_PATH=/backups
     restart: unless-stopped
     depends_on:
       postgres:
@@ -86,5 +90,7 @@ Most configuration is done via settings once Yarnl is up and running. There are 
 | `ADMIN_USERNAME` | `admin` | Initial admin username |
 | `ADMIN_PASSWORD` | *(empty)* | Admin password (empty = passwordless login) |
 | `PORT` | `3000` | Port exposed on the host |
+| `NODE_ENV` | `production` | Set to `development` for verbose errors |
 | `TZ` | `UTC` | Timezone for scheduled backups |
+| `BACKUP_PATH` | *(unset)* | Custom backup storage location (see [Backup](#backup--restore)) |
 | `FORCE_LOCAL_LOGIN` | `false` | Force local login even when OIDC/SSO is configured |

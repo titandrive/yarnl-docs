@@ -7,7 +7,7 @@ slug: /about
 
 # Yarnl
 
-Yarnl was born from a desire to build the perfect crochet companion — after being endlessly frustrated by what currently exists. It was also the perfect way to combine two favorite pastimes: crocheting and self-hosting.
+Yarnl was born from a desire to build the perfect crochet companion after being endlessly frustrated by what currently exists. It was also the perfect way to combine two favorite pastimes: crocheting and self-hosting.
 
 ---
 
@@ -48,7 +48,7 @@ Patterns are stored as plain files on disk. Notes and patterns use Markdown. Eve
 
 ### Works Everywhere
 
-Fully responsive — works just as well on a widescreen monitor as it does on your phone. Start a pattern at your desk and pick it up on the train. Yarnl remembers exactly where you left off, including the page, zoom level, and row count.
+Fully responsive and works just as well on a widescreen monitor as it does on your phone. Start a pattern at your desk and pick it up on the train. Yarnl remembers exactly where you left off, including the page, zoom level, and row count.
 
 </div>
 

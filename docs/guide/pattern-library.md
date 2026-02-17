@@ -1,12 +1,12 @@
 ---
 sidebar_position: 2
-title: Pattern Management
+title: Pattern Library
 description: Import, organize, and manage your pattern library
 ---
 
-# Pattern Management
+# Pattern Library
 
-Import, organize, and manage your pattern library.
+Yarnl makes it easy to organize your pattern library and find exactly what you need quickly. 
 
 ---
 
@@ -94,7 +94,7 @@ Type in the search bar to filter by pattern name, description, or hashtag. Prefi
 
 ## Categories
 
-Patterns are organized into categories. Each category maps to a folder on disk — changing a pattern's category moves its file.
+Patterns are organized into categories. Each category maps to a folder on disk, so changing a pattern's category moves its file.
 
 - **Create** — add new categories from the sidebar or during upload
 - **Rename** — updates all patterns using that category and renames the folder
@@ -118,9 +118,9 @@ Flexible tags for cross-cutting organization. Unlike categories, a pattern can h
 
 | Status | Description |
 |--------|-------------|
-| **New** | Just added — no timer or completion date |
+| **New** | Just added, no timer or completion date |
 | **In Progress** | Actively being worked on (`is_current`) |
-| **Completed** | Finished — records a completion date |
+| **Completed** | Finished and records a completion date |
 | **Favorite** | Flagged for quick access |
 
 Marking a pattern as completed automatically removes it from "In Progress." Marking it as "In Progress" removes the completed status.

@@ -28,7 +28,7 @@ yarnl-backup-2026-01-20T12-00-00.zip
     └── *.md
 ```
 
-The `database.json` includes all pattern metadata — counters, timer data, PDF positions, categories, hashtags, and favorites. This is always included in every backup.
+The `database.json` includes all pattern metadata: counters, timer data, PDF positions, categories, hashtags, and favorites. This is always included in every backup.
 
 ### Backup Options
 
@@ -74,7 +74,7 @@ The backup time uses the timezone set by the `TZ` environment variable (default:
 2. Click **Restore** on the backup you want
 3. Confirm
 
-The restore replaces your current data — patterns, counters, categories, settings, and all files — with the contents of the backup. Only your data is affected; other users are untouched.
+The restore replaces your current data (patterns, counters, categories, settings, and all files) with the contents of the backup. Only your data is affected; other users are untouched.
 
 You can also restore from a backup file that isn't in the list by uploading it.
 
@@ -167,7 +167,7 @@ Exports all user accounts (including permissions and password hashes), OIDC sett
 
 ### User Data Backup (ZIP)
 
-Exports the entire `users/` directory — all pattern files, images, archives, notes, and thumbnails for every user. Use this alongside a config backup for a full instance migration.
+Exports the entire `users/` directory including all pattern files, images, archives, notes, and thumbnails for every user. Use this alongside a config backup for a full instance migration.
 
 </div>
 

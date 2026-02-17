@@ -7,7 +7,7 @@ description: Manage your account settings
 
 # Account
 
-Manage your account settings.
+Manage your account settings. See the [Users & Authentication guide](../guide/users-and-authentication) for details.
 
 ---
 

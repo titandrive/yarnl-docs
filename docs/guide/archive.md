@@ -6,7 +6,7 @@ description: Manage deleted patterns and projects
 
 # Archive
 
-When you delete a pattern or project, it moves to the archive instead of being permanently deleted. Think of it as a recycle bin — you can restore items or permanently delete them when you're ready.
+When you delete a pattern or project, it moves to the archive instead of being permanently deleted. Think of it as a recycle bin where you can restore items or permanently delete them when you're ready.
 
 ---
 
@@ -56,7 +56,7 @@ Auto-delete runs daily at midnight and on server startup. If [Pushover notificat
 
 ## Direct Delete Mode
 
-If you prefer to skip the archive entirely, enable **Direct Delete** in **Settings** → **Archive**. With this enabled, deleting a pattern or project permanently removes it immediately — no archive, no recovery.
+If you prefer to skip the archive entirely, enable **Direct Delete** in **Settings** → **Archive**. With this enabled, deleting a pattern or project permanently removes it immediately with no archive and no recovery.
 
 Enabling direct delete mode hides the archive settings and archived items list. If you have items currently in the archive when you enable this mode, you'll be asked to confirm.
 

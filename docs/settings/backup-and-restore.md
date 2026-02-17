@@ -7,7 +7,7 @@ description: Create and manage backups of your patterns, settings, and data
 
 # Backup & Restore
 
-Create and manage backups of your patterns, settings, and data.
+Create and manage backups of your patterns, settings, and data. See the [Backups & Data guide](../guide/backups-and-data) for details.
 
 ---
 

@@ -7,7 +7,7 @@ description: Customize keyboard shortcuts for the pattern viewer
 
 # Keyboard Shortcuts
 
-Customize keyboard shortcuts for the PDF pattern viewer.
+Customize keyboard shortcuts for the PDF pattern viewer. See the [Bluetooth Controllers guide](../guide/bluetooth-controllers) for using a remote.
 
 ---
 

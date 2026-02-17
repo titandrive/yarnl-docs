@@ -63,7 +63,7 @@ docker compose up -d --build
 
 ### Frontend Changes (CSS, JS, HTML)
 
-Files in `public/` are mounted into the container. Just edit and refresh the browser — no rebuild required.
+Files in `public/` are mounted into the container. Just edit and refresh the browser. No rebuild required.
 
 > **Tip:** If changes don't appear, hard refresh with `Ctrl+Shift+R` (or `Cmd+Shift+R` on macOS). The stylesheet URL includes a `?v=` cache-busting parameter in `index.html` that you can bump if needed.
 
@@ -138,6 +138,6 @@ See `.env.example` for all available options. Key development settings:
 
 ## Tips
 
-- The `docker-compose.override.yml` file is gitignored — use it for your local settings without affecting the repo
-- The app is a single `server.js` file with no build step — what you see is what gets served
+- The `docker-compose.override.yml` file is gitignored, so use it for your local settings without affecting the repo
+- The app is a single `server.js` file with no build step. What you see is what gets served.
 - Frontend uses vanilla JS (no framework, no bundler)

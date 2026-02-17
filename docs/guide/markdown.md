@@ -6,7 +6,7 @@ description: Write patterns and notes using simple text formatting
 
 # Markdown
 
-Yarnl uses Markdown for custom patterns and pattern notes. Rendering is handled by [marked.js](https://marked.js.org/) with GitHub Flavored Markdown (GFM) enabled. It's a simple way to format text using plain characters — easy to learn, easy to read, and portable.
+Yarnl uses Markdown for custom patterns and pattern notes. Rendering is handled by [marked.js](https://marked.js.org/) with GitHub Flavored Markdown (GFM) enabled. It's a simple way to format text using plain characters that's easy to learn, easy to read, and portable.
 
 ---
 
@@ -69,7 +69,7 @@ Yarnl renders markdown with GitHub Flavored Markdown (GFM) enabled, so you get e
 ![Alt text](image-url.jpg)
 ```
 
-You can also paste images directly into the markdown editor — they're uploaded to the server and embedded automatically.
+You can also paste images directly into the markdown editor. They're uploaded to the server and embedded automatically.
 
 ### Blockquotes
 
@@ -102,7 +102,7 @@ You can also paste images directly into the markdown editor — they're uploaded
 ---
 
 ## Example Pattern Note
-
+### Markdown:
 ```markdown
 # Cozy Bear Amigurumi
 
@@ -123,6 +123,26 @@ Started with a magic ring. Using safety eyes (12mm).
 - Added an extra row to the body for a taller bear
 - Used embroidered nose instead of felt
 ```
+### Text:
+# Cozy Bear Amigurumi
+
+## Yarn Used
+- **Brand:** Lion Brand Wool-Ease
+- **Color:** Fisherman (#099)
+- **Weight:** 4 (Medium)
+
+## Hook
+5.0mm (H/8)
+
+## Notes
+Started with a magic ring. Using safety eyes (12mm).
+
+> Remember: Stuff firmly as you go!
+
+## Modifications
+- Added an extra row to the body for a taller bear
+- Used embroidered nose instead of felt
+
 
 ---
 

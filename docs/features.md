@@ -26,7 +26,7 @@ Host Yarnl on your own server. **Free forever** with no subscriptions. Your data
 
 ### Pattern Library
 
-**Bulk import** PDFs, organize with **categories & hashtags**, and find anything with **search and filters**. [Learn more →](./guide/pattern-management)
+**Bulk import** PDFs, organize with **categories & hashtags**, and find anything with **search and filters**. [Learn more →](./guide/pattern-library)
 
 </div>
 
@@ -50,7 +50,7 @@ A distraction-free reading experience with **row counters**, **timer**, and auto
 
 ### Markdown Patterns
 
-Write patterns directly in Yarnl with **GitHub Flavored Markdown** — headers, lists, tables, images, and more. [Learn more →](./guide/markdown)
+Write patterns directly in Yarnl with **GitHub Flavored Markdown** including headers, lists, tables, images, and more. [Learn more →](./guide/markdown)
 
 </div>
 

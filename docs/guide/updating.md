@@ -6,7 +6,7 @@ description: How to update Yarnl to the latest version
 
 # Updating
 
-Yarnl is designed for seamless updates. Pull the latest image, restart, and all database migrations run automatically — no manual steps required.
+Yarnl is designed for seamless updates. Pull the latest image, restart, and all database migrations run automatically. No manual steps required.
 
 ---
 
@@ -33,7 +33,7 @@ When Yarnl starts, it runs an automatic initialization sequence before serving a
 4. **Data migrations** — one-time migrations (like moving from single-user to multi-user file structure) run if needed
 5. **Backup path migration** — if `BACKUP_PATH` changed, existing backups are moved to the new location
 
-All migrations are idempotent — they check before making changes, so running them multiple times is safe. If any step fails, Yarnl exits with an error instead of starting in a broken state.
+All migrations are idempotent and check before making changes, so running them multiple times is safe. If any step fails, Yarnl exits with an error instead of starting in a broken state.
 
 ---
 
@@ -88,7 +88,7 @@ docker compose up -d
 ```
 
 :::warning
-Rolling back to a version older than your database schema may cause issues. Yarnl's migrations only go forward — they add columns but don't remove them. In most cases a rollback is safe because older versions simply ignore columns they don't know about, but this isn't guaranteed for every release.
+Rolling back to a version older than your database schema may cause issues. Yarnl's migrations only go forward and add columns but don't remove them. In most cases a rollback is safe because older versions simply ignore columns they don't know about, but this isn't guaranteed for every release.
 :::
 
 ---
@@ -101,7 +101,7 @@ The PostgreSQL container uses `postgres:16-alpine`. Minor version updates (e.g.,
 2. Stop both containers
 3. Delete the PostgreSQL data volume
 4. Update the image tag in `docker-compose.yml`
-5. Start the containers — PostgreSQL creates a fresh database
+5. Start the containers and PostgreSQL creates a fresh database
 6. Restore from your backup
 
 The `yarnl-postgres-data` Docker volume persists across container restarts, so your data is safe during normal updates. Only delete it when performing a major PostgreSQL version upgrade with a backup in hand.

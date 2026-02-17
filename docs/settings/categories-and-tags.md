@@ -7,7 +7,7 @@ description: Organize your pattern library with categories and hashtags
 
 # Categories & Tags
 
-Organize your pattern library with categories and hashtags.
+Organize your pattern library with categories and hashtags. See the [Pattern Library guide](../guide/pattern-library#categories) for details.
 
 ---
 

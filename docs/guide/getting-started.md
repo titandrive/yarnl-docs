@@ -6,7 +6,7 @@ description: Get up and running with Yarnl
 
 # Getting Started
 
-Welcome to Yarnl! Here's how to get going.
+A quick walkthrough to help you set up your library and start using Yarnl after installation.
 
 ---
 
@@ -65,7 +65,7 @@ Go to **Settings** to:
 
 ## What's Next?
 
-- [Pattern Management](./pattern-management) — Importing & organizing
+- [Pattern Library](./pattern-library) — Importing & organizing
 - [Pattern Viewer](./pattern-viewer) — Counters & timer
 - [Keyboard Shortcuts](../settings/keyboard-shortcuts) — Speed up your workflow
 - [Backups](./backups-and-data) — Protect your data

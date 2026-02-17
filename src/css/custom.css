@@ -597,6 +597,34 @@ html:not([data-theme='dark']) .feature-card p {
   color: var(--yarnl-text-dim);
 }
 
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .feature-card {
+    padding: 0.65rem;
+  }
+
+  .feature-icon {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    margin-bottom: 0.35rem;
+  }
+
+  .feature-card h3 {
+    font-size: 0.85rem;
+    margin: 0 0 0.15rem;
+  }
+
+  .feature-card p {
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
+}
+
 /* App Preview Section */
 .preview-section {
   background: var(--yarnl-darker);
@@ -892,7 +920,7 @@ html:not([data-theme='dark']) .navbar-sidebar .menu__link[href="https://github.c
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 3rem 1.5rem 4rem;
+    padding: 3rem 1.5rem 1.5rem;
   }
 
   .hero-mascot {
@@ -908,8 +936,14 @@ html:not([data-theme='dark']) .navbar-sidebar .menu__link[href="https://github.c
   }
 
   .hero-buttons {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
   }
 
   .features-section,
@@ -968,7 +1002,22 @@ html:not([data-theme='dark']) .feature-box p {
 
 @media (max-width: 600px) {
   .features-grid-docs {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .features-grid-docs .feature-box {
+    padding: 0.75rem;
+  }
+
+  .features-grid-docs .feature-box h3 {
+    font-size: 0.9rem;
+    margin: 0 0 0.35rem;
+  }
+
+  .features-grid-docs .feature-box p {
+    font-size: 0.8rem;
+    line-height: 1.4;
   }
 }
 

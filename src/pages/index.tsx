@@ -4,6 +4,18 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import ThemedImage from '@theme/ThemedImage';
 
+function useIsMobile(breakpoint = 768): boolean {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${breakpoint}px)`);
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, [breakpoint]);
+  return isMobile;
+}
+
 function Icon({name}: {name: string}): ReactNode {
   const icons: Record<string, ReactNode> = {
     document: (
@@ -22,22 +34,29 @@ function Icon({name}: {name: string}): ReactNode {
         <path d="M9 15h6"/>
       </svg>
     ),
-    tag: (
+    save: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
-        <line x1="7" y1="7" x2="7.01" y2="7"/>
+        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+        <polyline points="17 21 17 13 7 13 7 21"/>
+        <polyline points="7 3 7 8 15 8"/>
       </svg>
     ),
-    clock: (
+    command: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <polyline points="12 6 12 12 16 14"/>
+        <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
       </svg>
     ),
-    search: (
+    sliders: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="8"/>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        <line x1="4" y1="21" x2="4" y2="14"/>
+        <line x1="4" y1="10" x2="4" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="12"/>
+        <line x1="12" y1="8" x2="12" y2="3"/>
+        <line x1="20" y1="21" x2="20" y2="16"/>
+        <line x1="20" y1="12" x2="20" y2="3"/>
+        <line x1="1" y1="14" x2="7" y2="14"/>
+        <line x1="9" y1="8" x2="15" y2="8"/>
+        <line x1="17" y1="16" x2="23" y2="16"/>
       </svg>
     ),
     server: (
@@ -66,20 +85,20 @@ const features = [
   {
     icon: 'counter',
     title: 'Pattern Viewer',
-    description: 'A distraction-free crocheting experience with everything you need and nothing you don\'t.',
+    description: 'Built-in row counters, a timer, PDF annotations, and automatic position saving so you never lose your place.',
   },
   {
-    icon: 'tag',
+    icon: 'save',
     title: 'Backups',
     description: 'Automatic backups that save all of your data. No more worrying about losing your place or favorite pattern again.',
   },
   {
-    icon: 'clock',
+    icon: 'command',
     title: 'Keyboard Shortcuts',
     description: 'Fully customizable keyboard shortcuts for counters, timer, navigation, and more. Yarnl also supports Bluetooth controllers.',
   },
   {
-    icon: 'search',
+    icon: 'sliders',
     title: 'Customizable UI',
     description: 'Nearly every part of the UI is customizable. Choose from tons of themes and fonts. You can even choose your favorite mascot.',
   },
@@ -88,8 +107,9 @@ const features = [
 function ScreenshotCarousel(): ReactNode {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
+  const isMobile = useIsMobile();
 
-  const screenshots = [
+  const desktopScreenshots = [
     {
       light: '/img/screenshots/home-light.png',
       dark: '/img/screenshots/home.png',
@@ -115,6 +135,35 @@ function ScreenshotCarousel(): ReactNode {
       caption: 'Track all your pattern details in one place'
     }
   ];
+
+  const mobileScreenshots = [
+    {
+      light: '/img/screenshots/mobile/viewer/library-light.png',
+      dark: '/img/screenshots/mobile/viewer/library.png',
+      alt: 'Yarnl pattern library',
+      caption: 'Organize and manage your entire pattern library'
+    },
+    {
+      light: '/img/screenshots/mobile/viewer/viewer-light.png',
+      dark: '/img/screenshots/mobile/viewer/viewer.png',
+      alt: 'Pattern view with row counter',
+      caption: 'Never lose track of what row you\'re on again'
+    },
+    {
+      light: '/img/screenshots/mobile/viewer/viewer-notes-light.png',
+      dark: '/img/screenshots/mobile/viewer/viewer-notes.png',
+      alt: 'Pattern notes',
+      caption: 'Create notes or full patterns using Markdown'
+    },
+    {
+      light: '/img/screenshots/mobile/viewer/about-light.png',
+      dark: '/img/screenshots/mobile/viewer/about.png',
+      alt: 'Pattern information',
+      caption: 'Track all your pattern details in one place'
+    }
+  ];
+
+  const screenshots = isMobile ? mobileScreenshots : desktopScreenshots;
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % screenshots.length);
@@ -294,21 +343,37 @@ function SmallCarousel({screenshots, title}: {screenshots: Array<{light: string,
 }
 
 function ThemesCarousel(): ReactNode {
-  const themes = [
-    { name: 'Synthwave', light: '/img/screenshots/themes/synthwave-light.png', dark: '/img/screenshots/themes/synthwave.png' },
-    { name: 'Midnight', light: '/img/screenshots/themes/midnight-light.png', dark: '/img/screenshots/themes/midnight.png' },
-    { name: 'Halloween', light: '/img/screenshots/themes/haloween-light.png', dark: '/img/screenshots/themes/haloween.png' },
+  const isMobile = useIsMobile();
+
+  const desktopThemes = [
+    { name: 'Synthwave', light: '/img/screenshots/themes/synthwave.png', dark: '/img/screenshots/themes/synthwave.png' },
+    { name: 'Midnight', light: '/img/screenshots/themes/midnight.png', dark: '/img/screenshots/themes/midnight.png' },
+    { name: 'Halloween', light: '/img/screenshots/themes/haloween.png', dark: '/img/screenshots/themes/haloween.png' },
     { name: 'Dracula', light: '/img/screenshots/themes/dracula-light.png', dark: '/img/screenshots/themes/dracula.png' },
-    { name: 'Cyberpunk', light: '/img/screenshots/themes/cyberpunk-light.png', dark: '/img/screenshots/themes/cyberpunk.png' },
+    { name: 'Cyberpink', light: '/img/screenshots/themes/cyberpunk.png', dark: '/img/screenshots/themes/cyberpunk.png' },
     { name: 'Ocean', light: '/img/screenshots/themes/ocean-light.png', dark: '/img/screenshots/themes/ocean.png' },
-    { name: 'Sunset', light: '/img/screenshots/themes/sunset-light.png', dark: '/img/screenshots/themes/sunset.png' },
+    { name: 'Sunset', light: '/img/screenshots/themes/sunset.png', dark: '/img/screenshots/themes/sunset.png' },
     { name: 'Forest', light: '/img/screenshots/themes/forest-light.png', dark: '/img/screenshots/themes/forest.png' },
     { name: 'Lavender', light: '/img/screenshots/themes/lavender-light.png', dark: '/img/screenshots/themes/lavender.png' },
-    { name: 'Coffee', light: '/img/screenshots/themes/coffee-light.png', dark: '/img/screenshots/themes/coffee.png' },
     { name: 'Slate', light: '/img/screenshots/themes/slate-light.png', dark: '/img/screenshots/themes/slate.png' },
     { name: 'Aqua', light: '/img/screenshots/themes/aqual-light.png', dark: '/img/screenshots/themes/aqua.png' },
     { name: 'Minimal', light: '/img/screenshots/themes/minimal-light.png', dark: '/img/screenshots/themes/minimal.png' },
   ];
+
+  const mobileThemes = [
+    { name: 'Synthwave', light: '/img/screenshots/mobile/themes/synthwave.png', dark: '/img/screenshots/mobile/themes/synthwave.png' },
+    { name: 'Midnight', light: '/img/screenshots/mobile/themes/midnight.png', dark: '/img/screenshots/mobile/themes/midnight.png' },
+    { name: 'Halloween', light: '/img/screenshots/mobile/themes/haloween.png', dark: '/img/screenshots/mobile/themes/haloween.png' },
+    { name: 'Cyberpink', light: '/img/screenshots/mobile/themes/cyberpink.png', dark: '/img/screenshots/mobile/themes/cyberpink.png' },
+    { name: 'Ocean', light: '/img/screenshots/mobile/themes/ocean-light.png', dark: '/img/screenshots/mobile/themes/ocean.png' },
+    { name: 'Sunset', light: '/img/screenshots/mobile/themes/sunset.png', dark: '/img/screenshots/mobile/themes/sunset.png' },
+    { name: 'Forest', light: '/img/screenshots/mobile/themes/forest-light.png', dark: '/img/screenshots/mobile/themes/forest.png' },
+    { name: 'Lavender', light: '/img/screenshots/mobile/themes/lavender-light.png', dark: '/img/screenshots/mobile/themes/lavender.png' },
+    { name: 'Aqua', light: '/img/screenshots/mobile/themes/aqua-light.png', dark: '/img/screenshots/mobile/themes/aqua.png' },
+    { name: 'Minimal', light: '/img/screenshots/mobile/themes/minimal-light.png', dark: '/img/screenshots/mobile/themes/minimal.png' },
+  ];
+
+  const themes = isMobile ? mobileThemes : desktopThemes;
 
   return <SmallCarousel screenshots={themes} title="Tons of Themes" />;
 }
@@ -329,6 +394,17 @@ function SettingsCarousel(): ReactNode {
 
 function PreviewSection(): ReactNode {
   const [isZoomed, setIsZoomed] = useState(false);
+  const isMobile = useIsMobile();
+
+  const sources = isMobile
+    ? {
+        light: '/img/screenshots/mobile/viewer/viewer-notes-light -anotated.png',
+        dark: '/img/screenshots/mobile/viewer/viewer-notes anotated.png',
+      }
+    : {
+        light: '/img/screenshots/notes-numbers-light.png',
+        dark: '/img/screenshots/notes-numbers.png',
+      };
 
   return (
     <>
@@ -343,16 +419,13 @@ function PreviewSection(): ReactNode {
             <ul className="preview-list">
               <li>Row counters. Make as many as you need.</li>
               <li>Add notes. With full Markdown support.</li>
-              <li>Timer keeps track of your crocheting</li>
-              <li>Custom PDF viewer designed just for crocheting.</li>
+              <li>Timer keeps track of your crocheting.</li>
+              <li>Annotate PDFs with highlights, drawings, and text.</li>
             </ul>
           </div>
           <ThemedImage
             alt="Pattern view with row counter"
-            sources={{
-              light: '/img/screenshots/notes-numbers-light.png',
-              dark: '/img/screenshots/notes-numbers.png',
-            }}
+            sources={sources}
             className="preview-image"
             onClick={() => setIsZoomed(true)}
             style={{ cursor: 'zoom-in' }}
@@ -368,10 +441,7 @@ function PreviewSection(): ReactNode {
             </button>
             <ThemedImage
               alt="Pattern view with row counter"
-              sources={{
-                light: '/img/screenshots/notes-numbers-light.png',
-                dark: '/img/screenshots/notes-numbers.png',
-              }}
+              sources={sources}
               className="screenshot-modal-image"
               onClick={() => setIsZoomed(false)}
               style={{ cursor: 'zoom-out' }}
@@ -384,10 +454,12 @@ function PreviewSection(): ReactNode {
 }
 
 export default function Home(): ReactNode {
+  const isMobile = useIsMobile();
+
   return (
     <Layout
       title="Home"
-      description="Yarnl - Your self-hosted crochet companion. Track patterns, manage your yarn stash, and organize your projects.">
+      description="Yarnl - Your self-hosted crochet companion. Track patterns, organize projects, and never lose your place again.">
 
       <div className="homepage">
         {/* Hero */}
@@ -426,7 +498,7 @@ export default function Home(): ReactNode {
           </div>
           <div className="small-carousels-container">
             <ThemesCarousel />
-            <SettingsCarousel />
+            {!isMobile && <SettingsCarousel />}
           </div>
         </section>
 

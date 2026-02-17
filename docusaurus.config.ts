@@ -85,13 +85,13 @@ const config: Config = {
         },
         {href: 'https://demo.yarnl.com', label: 'Demo', position: 'left'},
         {
-          href: 'https://ko-fi.com/yarnl',
-          label: 'Ko-fi',
+          href: 'https://github.com/titandrive/yarnl',
+          label: 'GitHub',
           position: 'right',
         },
         {
-          href: 'https://github.com/titandrive/yarnl',
-          label: 'GitHub',
+          href: 'https://ko-fi.com/yarnl',
+          label: 'Ko-fi',
           position: 'right',
         },
       ],

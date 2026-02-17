@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 12
 title: Development Setup
 description: Set up a local development environment for contributing to Yarnl.
 ---

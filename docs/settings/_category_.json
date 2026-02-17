@@ -1,6 +1,7 @@
 {
   "label": "Settings",
   "position": 4,
+  "collapsed": true,
   "link": {
     "type": "generated-index",
     "description": "Configure Yarnl's settings to customize your experience."

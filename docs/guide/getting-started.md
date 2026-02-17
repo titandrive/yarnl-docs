@@ -42,7 +42,7 @@ Welcome to Yarnl! Here's how to get going.
 
 - Assign a **category** (Amigurumi, Wearables, etc.)
 - Add **hashtags** for filtering (`#beginner`, `#gift`)
-- Mark **favorites** for quick access
+- Mark **as in progress** for quick access from the In Progress tab
 
 ---
 

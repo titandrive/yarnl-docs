@@ -73,7 +73,7 @@ All counter values save automatically after every change.
 
 ### Keyboard Shortcuts
 
-Counters can be controlled with keyboard shortcuts. By default, **A** increments and **S** decrements the active counter. **Tab** cycles to the next counter. All shortcuts are configurable in [Keyboard Shortcuts](./keyboard-shortcuts).
+Counters can be controlled with keyboard shortcuts. By default, **A** increments and **S** decrements the active counter. **Tab** cycles to the next counter. All shortcuts are configurable in [Keyboard Shortcuts](../settings/keyboard-shortcuts).
 
 ---
 
@@ -140,4 +140,4 @@ The lock is released automatically when you close the viewer or switch tabs. Req
 
 ## Keyboard Shortcuts
 
-All viewer shortcuts (page navigation, counters, timer, zoom) are configurable. See [Keyboard Shortcuts](./keyboard-shortcuts) for defaults and customization.
+All viewer shortcuts (page navigation, counters, timer, zoom) are configurable. See [Keyboard Shortcuts](../settings/keyboard-shortcuts) for defaults and customization.

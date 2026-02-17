@@ -12,7 +12,7 @@ Yarnl is easy to get up and running with Docker. You'll be crocheting in no time
 - [Docker](https://docs.docker.com/get-docker/) 
 - Docker Compose
 
-1. Open terminal and run the following command to download and start the [`docker-compose.yml`](https://raw.githubusercontent.com/titandrive/yarnl/main/docker-compose.yml).:
+1. Open terminal and run the following command to download the [`docker-compose.yml`](https://raw.githubusercontent.com/titandrive/yarnl/main/docker-compose.yml) and start the container.:
 
 ```bash
 mkdir yarnl && cd yarnl                # Create a directory for Yarnl

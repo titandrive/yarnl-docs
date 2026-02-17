@@ -16,9 +16,9 @@ Yarnl is a self-hosted pattern manager built for crocheters who want full contro
 
 <div className="feature-box">
 
-### Self Hosted
+### Self-Hosted
 
-Host Yarnl on your own server. **Free forever** with no subscriptions. Your data stays private and fully portable.
+Host Yarnl on your own server. **Free forever** with no subscriptions. Your data stays private and fully portable. [Get started →](./guide/installation)
 
 </div>
 
@@ -26,7 +26,7 @@ Host Yarnl on your own server. **Free forever** with no subscriptions. Your data
 
 ### Pattern Library
 
-**Bulk import** patterns, organize with **categories & hashtags**, and find anything instantly with search and filters.
+**Bulk import** PDFs, organize with **categories & hashtags**, and find anything with **search and filters**. [Learn more →](./guide/pattern-management)
 
 </div>
 
@@ -34,15 +34,47 @@ Host Yarnl on your own server. **Free forever** with no subscriptions. Your data
 
 ### Pattern Viewer
 
-A distraction-free reading experience with **row counters**, **timer**, and automatic **PDF position saving**.
+A distraction-free reading experience with **row counters**, **timer**, and automatic **position saving**. [Learn more →](./guide/pattern-viewer)
 
 </div>
 
 <div className="feature-box">
 
-### Pattern Creation
+### PDF Annotations
 
-Write patterns directly in Yarnl with **full Markdown support** — headers, lists, tables, and more.
+**Draw**, **highlight**, and add **text** directly on your PDFs. Original files are always preserved. [Learn more →](./guide/pattern-viewer#pdf-viewer)
+
+</div>
+
+<div className="feature-box">
+
+### Markdown Patterns
+
+Write patterns directly in Yarnl with **GitHub Flavored Markdown** — headers, lists, tables, images, and more. [Learn more →](./guide/markdown)
+
+</div>
+
+<div className="feature-box">
+
+### Projects
+
+**Group patterns** into collections. Track project status, add notes, and continue where you left off. [Learn more →](./guide/projects)
+
+</div>
+
+<div className="feature-box">
+
+### Multi-User
+
+**Role-based access** with per-user permissions. Each user gets an isolated library with their own data. [Learn more →](./guide/users-and-authentication)
+
+</div>
+
+<div className="feature-box">
+
+### Single Sign-On
+
+**OpenID Connect** support with auto-discovery. Works with Authentik, Keycloak, PocketID, and any OIDC provider. [Learn more →](./guide/oidc)
 
 </div>
 
@@ -50,7 +82,7 @@ Write patterns directly in Yarnl with **full Markdown support** — headers, lis
 
 ### Keyboard Shortcuts
 
-**Fully customizable** shortcuts for counters, timer, and navigation. Works with **Bluetooth remotes** and **swipe gestures**.
+**Fully customizable** shortcuts for counters, timer, and navigation. Works with **Bluetooth remotes** and **media keys**. [Learn more →](./settings/keyboard-shortcuts)
 
 </div>
 
@@ -58,7 +90,7 @@ Write patterns directly in Yarnl with **full Markdown support** — headers, lis
 
 ### Customizable UI
 
-**Dark/light themes** with auto-switching, custom **fonts**, **mascots**, and tons of UI tweaks.
+**Dark/light themes** with auto-switching, custom **fonts**, **mascots**, and tons of UI tweaks. [Learn more →](./settings/appearance)
 
 </div>
 
@@ -66,15 +98,15 @@ Write patterns directly in Yarnl with **full Markdown support** — headers, lis
 
 ### Backups
 
-**Complete data persistence** for counters, timers, and settings. **Manual or scheduled** backups with **Pushover notifications**.
+**Manual or scheduled** backups with auto-pruning. **Pushover notifications** for backup and archive events. [Learn more →](./guide/backups-and-data)
 
 </div>
 
 <div className="feature-box">
 
-### Stats
+### Archive
 
-Track your crafting journey — **time per pattern**, **total hours**, and **pattern count** at a glance.
+Deleted items go to a recoverable **archive**. Optional **auto-delete** after a configurable grace period. [Learn more →](./guide/archive)
 
 </div>
 

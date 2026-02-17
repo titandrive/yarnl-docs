@@ -1,29 +1,29 @@
 ---
-sidebar_position: 8
+sidebar_position: 4
 title: Markdown
 description: Write patterns and notes using simple text formatting
 ---
 
 # Markdown
 
-Markdown is a simple way to format text using plain characters. It's easy to learn, easy to read, and works everywhere.
+Yarnl uses Markdown for custom patterns and pattern notes. Rendering is handled by [marked.js](https://marked.js.org/) with GitHub Flavored Markdown (GFM) enabled. It's a simple way to format text using plain characters — easy to learn, easy to read, and portable.
 
 ---
 
 ## Why Markdown?
 
-Yarnl uses Markdown for custom patterns and pattern notes because:
+- **Portable** — plain `.md` files that work in any text editor
+- **Future-proof** — no proprietary format that might become obsolete
+- **Readable** — even without rendering, the source text is easy to understand
+- **Lightweight** — just text, no bloated file sizes
 
-- **Portable** — Plain `.md` files that work in any text editor
-- **Future-proof** — No proprietary format that might become obsolete
-- **Readable** — Even without rendering, the text is easy to understand
-- **Lightweight** — Just text, no bloated file sizes
-
-Pattern notes are stored in `notes/` and custom Markdown patterns are stored in `patterns/`. Because they are simple text files, ou can edit them directly, back them up, or move them anywhere.
+Pattern notes are stored in `notes/` and markdown patterns are stored in `patterns/`. Because they're simple text files, you can edit them directly, back them up, or move them anywhere.
 
 ---
 
-## Basic Formatting
+## Supported Syntax
+
+Yarnl renders markdown with GitHub Flavored Markdown (GFM) enabled, so you get everything in standard markdown plus tables, strikethrough, and task lists.
 
 ### Headings
 
@@ -39,6 +39,7 @@ Pattern notes are stored in `notes/` and custom Markdown patterns are stored in 
 **bold text**
 *italic text*
 ***bold and italic***
+~~strikethrough~~
 ```
 
 ### Lists
@@ -53,22 +54,43 @@ Pattern notes are stored in `notes/` and custom Markdown patterns are stored in 
 3. Third step
 ```
 
-### Links
+### Task Lists
+
+```markdown
+- [x] Finished body
+- [ ] Start sleeves
+- [ ] Seam together
+```
+
+### Links and Images
 
 ```markdown
 [Link text](https://example.com)
-```
-
-### Images
-
-```markdown
 ![Alt text](image-url.jpg)
 ```
+
+You can also paste images directly into the markdown editor — they're uploaded to the server and embedded automatically.
 
 ### Blockquotes
 
 ```markdown
-> This is a quote or note
+> This is a note or tip
+```
+
+### Tables
+
+```markdown
+| Size | Chest | Length |
+|------|-------|--------|
+| S    | 34"   | 24"    |
+| M    | 38"   | 25"    |
+| L    | 42"   | 26"    |
+```
+
+### Code
+
+```markdown
+`inline code`
 ```
 
 ### Horizontal Rule
@@ -77,22 +99,10 @@ Pattern notes are stored in `notes/` and custom Markdown patterns are stored in 
 ---
 ```
 
-### Code
-
-```markdown
-`inline code`
-
-​```
-code block
-​```
-```
-
 ---
 
 ## Example Pattern Note
 
-Here's what a pattern note looks like in raw Markdown:
-
 ```markdown
 # Cozy Bear Amigurumi
 
@@ -113,29 +123,6 @@ Started with a magic ring. Using safety eyes (12mm).
 - Added an extra row to the body for a taller bear
 - Used embroidered nose instead of felt
 ```
-
-And here's how it renders:
-
----
-
-# Cozy Bear Amigurumi
-
-## Yarn Used
-- **Brand:** Lion Brand Wool-Ease
-- **Color:** Fisherman (#099)
-- **Weight:** 4 (Medium)
-
-## Hook
-5.0mm (H/8)
-
-## Notes
-Started with a magic ring. Using safety eyes (12mm).
-
-> Remember: Stuff firmly as you go!
-
-## Modifications
-- Added an extra row to the body for a taller bear
-- Used embroidered nose instead of felt
 
 ---
 

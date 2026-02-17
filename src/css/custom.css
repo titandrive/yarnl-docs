@@ -966,6 +966,32 @@ html:not([data-theme='dark']) .feature-box p {
   }
 }
 
+/* Pattern card grid */
+.pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.pattern-grid .feature-box {
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.pattern-grid .feature-box img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.25rem;
+}
+
+.pattern-grid .feature-box p {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
 /* ===== GUIDE PAGE STYLES ===== */
 
 .steps-grid,

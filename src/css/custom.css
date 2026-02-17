@@ -467,11 +467,15 @@ html:not([data-theme='dark']) .carousel-dot.active {
     grid-template-columns: 1fr;
     gap: 3rem;
     margin-top: 3rem;
-    padding: 0 2rem;
+    padding: 0;
   }
 
   .small-carousel-content {
-    padding: 0 45px;
+    padding: 0 50px;
+  }
+
+  .small-carousel-image {
+    max-width: 100%;
   }
 
   .small-carousel .carousel-btn {
@@ -879,6 +883,8 @@ html:not([data-theme='dark']) .navbar-sidebar .menu__link[href="https://github.c
 
   .preview-image {
     order: -1;
+    max-width: 300px;
+    margin: 0 auto;
   }
 
 }

@@ -7,7 +7,7 @@ description: Manage archived patterns and projects
 
 # Archive
 
-Manage archived patterns and projects.
+Manage archived patterns and projects. See the [Archive guide](../guide/archive) for details on how archiving works.
 
 ---
 

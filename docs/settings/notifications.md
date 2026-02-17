@@ -7,7 +7,7 @@ description: Configure push notifications for app events
 
 # Notifications
 
-Configure push notifications for app events.
+Configure push notifications for app events. See the [Pushover setup guide](../guide/backups-and-data#pushover-notifications) for details.
 
 ---
 

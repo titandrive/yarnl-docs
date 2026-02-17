@@ -7,7 +7,7 @@ description: Manage users, authentication, and system settings
 
 # Admin (Admin Only)
 
-Manage users, authentication, and system settings. Only visible to users with the admin role.
+Manage users, authentication, and system settings. Only visible to users with the admin role. See the [Users & Authentication](../guide/users-and-authentication) and [OIDC](../guide/oidc) guides for details.
 
 ---
 
@@ -29,7 +29,7 @@ Displays a list of all users with their username, role, authentication method, a
 | Permission | Description |
 |------------|-------------|
 | **User is admin** | Grant admin access to the admin panel and all admin features. |
-| **Can add patterns** | Two toggles side by side — **PDF** controls whether the user can upload PDF patterns, **MD** controls whether they can create markdown patterns. |
+| **Can add patterns** | Two toggles side by side. **PDF** controls whether the user can upload PDF patterns, **MD** controls whether they can create markdown patterns. |
 | **Password required** | Require the user to have a password set (prevents them from removing it). |
 | **Can change username** | Allow the user to change their own username from the Account tab. |
 | **Can change password** | Allow the user to change their own password from the Account tab. |

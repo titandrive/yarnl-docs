@@ -11,11 +11,11 @@ Here are some of my favorite crochet patterns to get you started. These are the 
 
 ---
 
-## The Woobles
+## Woobles
 
 [Website](https://thewoobles.com/) · [Instagram](https://www.instagram.com/thewoobles/)
 
-Founded by Justine Tiu and Adrian Zhang, The Woobles makes beginner-friendly crochet kits that include everything you need — pre-started yarn, a hook, and step-by-step video tutorials. A great way to get into crochet if you've never picked up a hook before.
+Founded by Justine Tiu and Adrian Zhang, The Woobles makes beginner-friendly crochet kits that include everything you need: pre-started yarn, a hook, and step-by-step video tutorials. A great way to get into crochet if you've never picked up a hook before.
 
 <div className="pattern-grid">
 <div className="feature-box">
@@ -43,7 +43,7 @@ Founded by Justine Tiu and Adrian Zhang, The Woobles makes beginner-friendly cro
 
 ---
 
-## The Crochet Carpenter
+## Stitchkins by The Crochet Carpenter
 
 [Website](https://thecrochetcarpenter.ca/) · [Instagram](https://www.instagram.com/thecrochetcarpenter/) · [Etsy](https://www.etsy.com/shop/CrochetCarpenter)
 

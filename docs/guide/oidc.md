@@ -6,7 +6,7 @@ description: Set up OpenID Connect (OIDC) for single sign-on authentication with
 
 # OIDC / Single Sign-On
 
-Yarnl supports any OpenID Connect (OIDC) provider for single sign-on. No manual endpoint configuration required — just provide your issuer URL and Yarnl auto-discovers everything.
+Yarnl supports any OpenID Connect (OIDC) provider for single sign-on with an extremely simple onboarding process. No manual endpoint configuration is required, just provide your issuer URL and Yarnl auto-discovers everything.
 
 ---
 
@@ -21,7 +21,7 @@ Yarnl requests the `openid`, `profile`, and `email` scopes, and uses these claim
 
 | Claim | Usage |
 |-------|-------|
-| `sub` | Unique identifier — links the OIDC account to a Yarnl user |
+| `sub` | Unique identifier that links the OIDC account to a Yarnl user |
 | `preferred_username` | Username for auto-created accounts |
 | `email` | Fallback username if `preferred_username` is not available |
 | `name` | Display name |
@@ -42,14 +42,14 @@ In your OIDC provider, create a new application (sometimes called a "client") wi
 
 Replace `yarnl.example.com` with your actual Yarnl URL. The exact callback URL is also shown in the Yarnl admin panel once you open the OIDC settings.
 
-Take note of the **Client ID** and **Client Secret** — you'll need them in the next step.
+Take note of the **Client ID** and **Client Secret**, as you'll need them in the next step.
 
 ### 2. Configure Yarnl
 
 Go to **Settings** → **Admin** → **OIDC / Single Sign-On**:
 
 1. Enter your provider's **Issuer URL** (e.g., `https://auth.example.com`)
-2. Click **Discover** — Yarnl fetches and populates all OIDC endpoints automatically
+2. Click **Discover** and Yarnl fetches and populates all OIDC endpoints automatically
 3. Enter the **Client ID** and **Client Secret** from your provider
 4. Click **Save OIDC Settings**
 
@@ -63,7 +63,7 @@ That's it. The login page will now show an SSO button.
 | **Provider Icon** | URL to a custom icon displayed on the login button |
 | **Auto-create users** | Automatically create Yarnl accounts for new SSO users |
 | **Default role** | Role assigned to auto-created users (`user` or `admin`) |
-| **Disable local login** | Hide the username/password form — SSO only |
+| **Disable local login** | Hide the username/password form for SSO-only login |
 
 ---
 
@@ -110,7 +110,7 @@ Existing Yarnl users can link their account to an OIDC provider for passwordless
 1. Go to **Settings** → **Account** → **Single Sign-On**
 2. Click **Link SSO Account**
 3. Authenticate with the OIDC provider
-4. The account is now linked — the user can log in via either method
+4. The account is now linked and the user can log in via either method
 
 ### Unlinking
 
@@ -132,7 +132,7 @@ When **Auto-create users** is enabled, new users who authenticate via OIDC are a
 - The username is taken from the provider's `preferred_username` claim, falling back to `email`, then `sub`
 - The role is set to whatever you've configured in **Default role for new users**
 - Default categories are automatically created for the new account
-- No local password is set — the user logs in exclusively via SSO unless one is added later
+- No local password is set, so the user logs in exclusively via SSO unless one is added later
 
 When disabled, only users whose accounts have been pre-created (and linked) by an admin can log in via SSO.
 
@@ -183,4 +183,4 @@ The exact URL to use is shown in the Yarnl admin panel under the OIDC settings.
 
 ### Reset OIDC
 
-To clear all OIDC settings and unlink all users, click **Reset OIDC** in the admin panel. This disables SSO and removes all OIDC associations — users can still log in with local credentials.
+To clear all OIDC settings and unlink all users, click **Reset OIDC** in the admin panel. This disables SSO and removes all OIDC associations. Users can still log in with local credentials.

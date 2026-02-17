@@ -14,7 +14,7 @@ Yarnl supports multiple users with role-based access control and flexible authen
 
 | Role | Access |
 |------|--------|
-| **Admin** | Full access — user management, OIDC config, default categories, system backups |
+| **Admin** | Full access including user management, OIDC config, default categories, system backups |
 | **User** | Personal pattern library only, isolated data |
 
 ---
@@ -58,11 +58,11 @@ When Yarnl first starts, it creates an admin account using environment variables
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `ADMIN_USERNAME` | `admin` | Admin username |
-| `ADMIN_PASSWORD` | *(none)* | Admin password — leave empty for passwordless login |
+| `ADMIN_PASSWORD` | *(none)* | Admin password (leave empty for passwordless login) |
 
 ### Single-User Mode
 
-If the admin has no password and no other users exist, Yarnl skips the login screen entirely. You go straight to the home page. This is ideal for personal, single-user deployments.
+If the admin has no password and no other users exist, Yarnl skips the login screen entirely and goes straight to the home page. This is ideal for personal, single-user deployments.
 
 Single-user mode deactivates as soon as the admin sets a password or another user is created.
 
@@ -109,7 +109,7 @@ The admin user list shows badges for each user:
 | Badge | Color | Meaning |
 |-------|-------|---------|
 | ADMIN / USER | Purple | User's role |
-| LOCAL / *[Provider]* | Cyan | Authentication method — local or OIDC provider name |
+| LOCAL / *[Provider]* | Cyan | Authentication method, either local or OIDC provider name |
 | pw | Green | User has a local password set |
 | You | Amber | The currently logged-in user |
 
@@ -130,7 +130,7 @@ Users manage their own account in **Settings** → **Account**:
 
 ## Data Isolation
 
-Each user's data is completely separate — both on disk and in the database:
+Each user's data is completely separate, both on disk and in the database:
 
 ```
 users/
@@ -197,21 +197,6 @@ Admins have access to system-wide backups in **Settings** → **Admin**:
 Use both together to migrate or recover an entire Yarnl instance. The config restore skips the current admin account to avoid overwriting your own credentials.
 
 ---
-
-## Environment Variables
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `ADMIN_USERNAME` | `admin` | Initial admin username |
-| `ADMIN_PASSWORD` | *(none)* | Admin password (empty = passwordless login) |
-| `FORCE_LOCAL_LOGIN` | `false` | Bypass OIDC and show the local login form |
-
-:::tip Emergency Access
-If OIDC is misconfigured and you're locked out, set `FORCE_LOCAL_LOGIN=true` to bypass SSO and access local login. Remove it once you've fixed the OIDC settings.
-:::
-
----
-
 ## Security
 
 - All API endpoints require authentication (except login and OIDC callback)

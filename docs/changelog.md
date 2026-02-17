@@ -49,7 +49,7 @@ All notable changes to Yarnl, listed by version. See [GitHub Releases](https://g
 - Project badge color changed to secondary (pink) to distinguish from category badges
 
 ### Infrastructure
-- `NODE_ENV=production` now defaults in the Dockerfile — no longer needed in docker-compose
+- `NODE_ENV=production` now defaults in the Dockerfile, so it's no longer needed in docker-compose
 - **BACKUP_PATH env var** — configure custom backup storage location
 - Fix backup migration across Docker volume mounts
 - Upgrade multer to 2.0.2 (fixes 4 high-severity DoS vulnerabilities)

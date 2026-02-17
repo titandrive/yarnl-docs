@@ -6,7 +6,7 @@ description: View patterns, annotate PDFs, track progress with counters and time
 
 # Pattern Viewer
 
-The pattern viewer is where you work with your patterns — read instructions, annotate PDFs, track rows, and time your sessions.
+The pattern viewer is where you work with your patterns. Read instructions, annotate PDFs, track rows, and time your sessions.
 
 ---
 
@@ -30,19 +30,19 @@ Zoom controls are in the toolbar. On mobile, pinch-to-zoom and double-tap-and-dr
 
 ### Annotations
 
-Annotate directly on your PDF patterns using the built-in PDF.js annotation tools. Your original file is never modified — annotations are saved to a separate file.
+Annotate directly on your PDF patterns using the built-in PDF.js annotation tools. Your original file is never modified. Annotations are saved to a separate file.
 
 **Tools:** freehand drawing (pen), highlighter (semi-transparent overlay), and text annotations. Color and line width are configurable through the annotation toolbar.
 
 **Saving:** Annotations save automatically after a short delay (2 seconds of inactivity). They're stored as a separate `.annotated.pdf` alongside your original file, so the original is always preserved.
 
-**Reverting:** To remove all annotations and go back to the original PDF, use the revert option. This deletes the annotated file entirely. A confirmation is required to prevent accidental data loss.
+**Reverting:** To remove all annotations and go back to the original PDF, use the revert option (edit -> revert). This deletes the annotated file entirely. A confirmation is required to prevent accidental data loss.
 
 ---
 
 ## Markdown Viewer
 
-Markdown patterns render with full GitHub Flavored Markdown support — headers, lists, tables, code blocks, task lists, and more. See [Markdown](./markdown) for syntax reference.
+Markdown patterns render with full GitHub Flavored Markdown support including headers, lists, tables, code blocks, task lists, and more. See [Markdown](./markdown) for syntax reference.
 
 ### Inline Editing
 
@@ -50,7 +50,7 @@ Click the edit button to switch to an inline markdown editor. Changes auto-save 
 
 ### Images
 
-Markdown patterns can include images. You can paste images directly into the editor — they're uploaded to the server and embedded automatically.
+Markdown patterns can include images. You can paste images directly into the editor and they're uploaded to the server and embedded automatically.
 
 ---
 
@@ -93,7 +93,7 @@ When enabled in settings, the timer starts automatically when you mark a pattern
 
 ## Notes
 
-Each pattern can have its own markdown notes — separate from the pattern content itself. Click the **Notes** button in the toolbar to open a resizable, draggable popover.
+Each pattern can have its own markdown notes, separate from the pattern content itself. Click the **Notes** button in the toolbar to open a resizable, draggable popover.
 
 - Supports full markdown with live preview
 - Paste images directly into notes
@@ -118,7 +118,7 @@ Click the **Info** button to see pattern metadata:
 | Gesture | Action |
 |---------|--------|
 | **Pinch** | Zoom in/out |
-| **Double-tap and drag** | Zoom — drag up to zoom in, down to zoom out |
+| **Double-tap and drag** | Zoom by dragging up to zoom in, down to zoom out |
 
 Haptic feedback (vibration) is available on supported devices and can be toggled in settings.
 

@@ -6,7 +6,7 @@ description: Group multiple patterns into collections
 
 # Projects
 
-Projects let you group multiple patterns into a single collection. Useful for larger works made up of multiple patterns — a blanket of squares, a doll with separate parts, or a themed set of related patterns.
+Projects let you group multiple patterns into a single collection. Useful for larger works made up of multiple patterns like a blanket of squares, a doll with separate parts, or a themed set of related patterns.
 
 ---
 
@@ -108,7 +108,7 @@ Marking a project as current automatically un-completes it. Marking it complete 
 
 ## Continue
 
-If a project has patterns marked "In Progress", a play button appears on the project card. Clicking it opens the first in-progress pattern directly in the viewer — no need to navigate into the project first.
+If a project has patterns marked "In Progress", a play button appears on the project card. Clicking it opens the first in-progress pattern directly in the viewer, so there's no need to navigate into the project first.
 
 ---
 

@@ -5,14 +5,15 @@ description: How to get started with Yarnl
 ---
 # Installation
 
-## Quick Start
-Yarnl is easy to get up and running with Docker. You'll be crocheting in no time. 
+Get Yarnl up and running with Docker in just a few minutes.
+
+## Quick Start 
 
 **Prerequisites:** 
 - [Docker](https://docs.docker.com/get-docker/) 
 - Docker Compose
 
-1. Open terminal and run the following command to download the [`docker-compose.yml`](https://raw.githubusercontent.com/titandrive/yarnl/main/docker-compose.yml) and start the container.:
+1. Open terminal and run the following command to create a directory, download the [`docker-compose.yml`](https://raw.githubusercontent.com/titandrive/yarnl/main/docker-compose.yml), and start the container:
 
 ```bash
 mkdir yarnl && cd yarnl                # Create a directory for Yarnl
@@ -24,10 +25,10 @@ docker compose up -d                   # Start Yarnl and PostgreSQL
 
 By default, Yarnl starts in single-user mode with an `admin` account and no password.
 
-To configure passwords, timezone, and other options, download the [`.env.example`](https://raw.githubusercontent.com/titandrive/yarnl/main/.env.example) file, rename it to `.env`, and edit as needed before starting.
+To configure passwords, timezone, and other options, download the [`.env.example`](https://raw.githubusercontent.com/titandrive/yarnl/main/.env.example) file and edit as needed before running the above command.
 
-## Docker Compose
-If you prefer to write the compose file yourself instead of downloading it:
+## Manual Install 
+If you prefer to write the compose file yourself instead of downloading it, here is the ~yarnl~ yaml to get you started:
 
 ```yaml
 services:

@@ -411,7 +411,7 @@ function PreviewSection(): ReactNode {
       <section className="preview-section">
         <div className="preview-inner">
           <div className="preview-content">
-            <h2>Focus on your craft, not your tools</h2>
+            <h2>Designed to keep you hooked</h2>
             <p>
               View your patterns with a built-in PDF reader, track rows with a tap,
               and pick up exactly where you left off, even weeks later.

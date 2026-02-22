@@ -3,23 +3,42 @@ sidebar_position: 0
 title: Installation
 description: How to get started with Yarnl
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Installation
 
 Get Yarnl up and running with Docker in just a few minutes.
 
-## Quick Start 
+## Quick Start
 
-**Prerequisites:** 
-- [Docker](https://docs.docker.com/get-docker/) 
+**Prerequisites:**
+- [Docker](https://docs.docker.com/get-docker/)
 - Docker Compose
 
-1. Open terminal and run the following command to create a directory, download the [`docker-compose.yml`](https://raw.githubusercontent.com/titandrive/yarnl/main/docker-compose.yml), and start the container:
+1. Open a terminal and run the following commands to create a directory, download the [`docker-compose.yml`](https://raw.githubusercontent.com/titandrive/yarnl/main/docker-compose.yml), and start the container:
+
+<Tabs>
+<TabItem value="linux" label="Linux / macOS" default>
 
 ```bash
-mkdir yarnl && cd yarnl                # Create a directory for Yarnl
-curl -O https://raw.githubusercontent.com/titandrive/yarnl/main/docker-compose.yml  # Download the compose file
-docker compose up -d                   # Start Yarnl and PostgreSQL
+mkdir yarnl && cd yarnl
+curl -O https://raw.githubusercontent.com/titandrive/yarnl/main/docker-compose.yml
+docker compose up -d
 ```
+
+</TabItem>
+<TabItem value="windows" label="Windows (PowerShell)">
+
+```powershell
+mkdir yarnl; cd yarnl
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/titandrive/yarnl/main/docker-compose.yml" -OutFile "docker-compose.yml"
+docker compose up -d
+```
+
+</TabItem>
+</Tabs>
 
 2. Open your browser and navigate to `http://localhost:3000`
 

@@ -101,16 +101,16 @@ Pruning runs automatically after each scheduled backup. You can also trigger it 
 
 ## Custom Backup Location
 
-By default, backups are stored alongside your user data in `./users/<username>/backups/`. You can redirect backups to a separate drive or NAS using the `BACKUP_PATH` environment variable.
+By default, backups are stored alongside your user data in `./users/<username>/backups/`. You can redirect backups to a separate drive or NAS using the `BACKUP_PATH` environment variable and a volume mount to `/backups`.
 
-Set `BACKUP_PATH` and mount the target path as a volume:
+Both are required — the env var tells Yarnl to use the external path, and the volume mount provides the actual storage location.
 
 ```yaml
 volumes:
   - ./users:/app/users
   - /mnt/user/drive:/backups
 environment:
-  - BACKUP_PATH=/backups
+  - BACKUP_PATH=true
 ```
 
 Backups will be stored at:
@@ -119,7 +119,11 @@ Backups will be stored at:
 /mnt/user/drive/yarnl-backups/<username>/yarnl-backup-*.zip
 ```
 
-When `BACKUP_PATH` is added, changed, or removed, Yarnl automatically migrates existing backups to the new location on startup. No manual file moves needed.
+When `BACKUP_PATH` is enabled, disabled, or the volume mount changes, Yarnl automatically migrates existing backups to the new location on startup. No manual file moves needed.
+
+:::note
+The old syntax `BACKUP_PATH=/backups` still works for backward compatibility, but `BACKUP_PATH=true` is preferred.
+:::
 
 :::tip
 Store backups somewhere different from Yarnl itself for redundancy.

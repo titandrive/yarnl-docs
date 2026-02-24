@@ -38,6 +38,11 @@ docker compose up -d
 ```
 
 </TabItem>
+<TabItem value="unraid" label="Unraid">
+
+Yarnl is available in Community Applications. See the [Unraid guide](./unraid) for detailed setup instructions.
+
+</TabItem>
 </Tabs>
 
 2. Open your browser and navigate to `http://localhost:3000`

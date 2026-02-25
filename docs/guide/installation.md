@@ -118,4 +118,5 @@ Most configuration is done via settings once Yarnl is up and running. There are 
 | `NODE_ENV` | `production` | Set to `development` for verbose errors |
 | `TZ` | `UTC` | Timezone for scheduled backups |
 | `BACKUP_PATH` | `false` | Set to `true` to store backups at an external volume mounted to `/backups` (see [Backups](./backups-and-data)) |
+| `SECURE_COOKIES` | `false` | Set to `true` to mark session cookies as HTTPS-only |
 | `FORCE_LOCAL_LOGIN` | `false` | Force local login even when OIDC/SSO is configured |

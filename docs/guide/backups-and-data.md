@@ -101,16 +101,14 @@ Pruning runs automatically after each scheduled backup. You can also trigger it 
 
 ## Custom Backup Location
 
-By default, backups are stored alongside your user data in `./users/<username>/backups/`. You can redirect backups to a separate drive or NAS using the `BACKUP_PATH` environment variable and a volume mount to `/backups`.
+By default, backups are stored alongside your user data in `./users/<username>/backups/`. You can redirect backups to a separate drive or NAS by mounting a volume to `/backups` inside the container.
 
-Both are required — the env var tells Yarnl to use the external path, and the volume mount provides the actual storage location.
+Yarnl automatically detects the mount — no environment variable needed. Just add the volume:
 
 ```yaml
 volumes:
   - ./users:/app/users
   - /mnt/user/drive:/backups
-environment:
-  - BACKUP_PATH=true
 ```
 
 Backups will be stored at:
@@ -119,10 +117,10 @@ Backups will be stored at:
 /mnt/user/drive/yarnl-backups/<username>/yarnl-backup-*.zip
 ```
 
-When `BACKUP_PATH` is enabled, disabled, or the volume mount changes, Yarnl automatically migrates existing backups to the new location on startup. No manual file moves needed.
+If the `/backups` mount is added or removed, Yarnl automatically migrates existing backups to the new location on startup. No manual file moves needed.
 
 :::note
-The old syntax `BACKUP_PATH=/backups` still works for backward compatibility, but `BACKUP_PATH=true` is preferred.
+If you previously used the `BACKUP_PATH` environment variable, you can safely remove it. Yarnl now ignores it and detects the volume mount automatically. No other changes are needed.
 :::
 
 :::tip
@@ -185,7 +183,7 @@ See [Users & Authentication](./users-and-authentication#admin-backup--restore) f
 
 1. **Enable scheduled backups** — set it and forget it
 2. **Enable auto-prune** — prevents backup storage from growing indefinitely
-3. **Use `BACKUP_PATH`** — store backups on a separate drive from Yarnl
+3. **Mount `/backups`** — store backups on a separate drive from Yarnl
 4. **Set up Pushover** — know immediately if a backup fails
 5. **Test restores** periodically — a backup you can't restore isn't a backup
 6. **Backup before updates** — create a manual backup before upgrading Yarnl

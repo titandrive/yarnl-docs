@@ -64,8 +64,7 @@ The container name **must** be `yarnl-db` so Yarnl can find the database automat
 |---------|---------|-------------|
 | **Admin Password** | *(empty)* | Leave empty for passwordless login, or set a password |
 | **Timezone** | `UTC` | Timezone for scheduled backups (e.g. `America/New_York`) |
-| **Backup Path** | *(empty)* | Mount an external path to store backups on a separate drive |
-| **Use External Backup Path** | *(empty)* | Set to `true` to enable external backup storage (requires Backup Path) |
+| **Backup Path** | *(empty)* | Mount an external path to store backups on a separate drive (auto-detected) |
 
 3. Click **Apply** and wait for Yarnl to start
 
@@ -85,10 +84,9 @@ To store backups on a separate drive or share instead of in the App Data directo
 
 1. Click on the Yarnl container and select **Edit**
 2. Set **Backup Path** to your desired location (e.g. `/mnt/user/backups/yarnl`)
-3. Set **Use External Backup Path** to `true`
-4. Click **Apply**
+3. Click **Apply**
 
-Yarnl will automatically migrate existing backups to the new location on startup.
+Yarnl automatically detects the mount and stores backups there. If you add or remove the backup path, existing backups are migrated automatically on startup.
 
 ---
 

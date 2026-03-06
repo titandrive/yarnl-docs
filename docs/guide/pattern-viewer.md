@@ -85,6 +85,8 @@ One counter per pattern can be designated as the **main** counter. When any othe
 
 The main counter's name is displayed in the accent color so you can identify it at a glance. Only one counter can be main at a time.
 
+When a main counter is set, an **Unlink** toggle appears on all other counters. Toggling it on opts that counter out of the main counter link — incrementing or decrementing it will no longer affect the main counter.
+
 ### Repeating Counters
 
 Counters can be set to repeat by toggling **Repeat** on in the counter settings and setting a row count. When the counter reaches the limit, the next increment resets it back to 1. The counter displays the value as `3/10` with the max in a smaller font.

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 sidebar_class_name: sidebar-icon-user
 title: Account
 description: Manage your account settings

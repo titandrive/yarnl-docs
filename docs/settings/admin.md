@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 sidebar_class_name: sidebar-icon-shield
 title: Admin
 description: Manage users, authentication, and system settings

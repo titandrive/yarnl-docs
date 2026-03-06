@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 sidebar_class_name: sidebar-icon-archive
 title: Archive
 description: Manage archived patterns and projects

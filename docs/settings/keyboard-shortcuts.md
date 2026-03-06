@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 sidebar_class_name: sidebar-icon-keyboard
 title: Keyboard Shortcuts
 description: Customize keyboard shortcuts for the pattern viewer

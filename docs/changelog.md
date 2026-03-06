@@ -10,6 +10,17 @@ All notable changes to Yarnl, listed by version. See [GitHub Releases](https://g
 
 ---
 
+## v0.6.10
+
+### Features
+- **Unlink counters** — when a main counter is set, an **Unlink** toggle appears on all other counters. Toggling it on opts that counter out of the main counter link — incrementing or decrementing it will no longer affect the main counter. Available on both desktop (settings pane) and mobile (edit panel).
+
+### UI Polish
+- **Bold main counter name** — the main counter's name is now bold in addition to being displayed in the accent color, making it easier to spot at a glance
+- **Mobile toggles save immediately** — Main, Repeat, and Unlink toggles on mobile now save on change instead of waiting for Done, matching desktop behavior
+
+---
+
 ## v0.6.9
 
 ### Features

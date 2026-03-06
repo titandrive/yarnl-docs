@@ -43,6 +43,38 @@ docker compose up -d
 Yarnl is available in Community Applications. See the [Unraid guide](./unraid) for detailed setup instructions.
 
 </TabItem>
+<TabItem value="env" label=".env Example">
+
+```bash
+# Yarnl Configuration
+# Copy this file to .env and customize as needed
+# All values shown are defaults — only set what you want to change
+
+# Database
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=yarnl
+POSTGRES_USER=yarnl
+POSTGRES_PASSWORD=yarnl
+
+# Admin Account
+# Username for the initial admin user (created on first run)
+ADMIN_USERNAME=admin
+# Leave empty for passwordless login, or set a password
+ADMIN_PASSWORD=
+
+# App
+# Port to expose on the host
+PORT=3000
+# Timezone for scheduled backups (e.g., America/New_York, Europe/London)
+TZ=UTC
+
+# SSO Recovery
+# Set to true to force local login when OIDC/SSO is misconfigured
+# FORCE_LOCAL_LOGIN=true
+```
+
+</TabItem>
 </Tabs>
 
 2. Open your browser and navigate to `http://localhost:3000`

@@ -272,4 +272,4 @@ All notable changes to Yarnl, listed by version. See [GitHub Releases](https://g
 
 ## v0.5.0
 
-Initial release.
+Initial public release.

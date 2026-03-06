@@ -17,7 +17,6 @@ All notable changes to Yarnl, listed by version. See [GitHub Releases](https://g
 
 ### UI
 - **Settings reorganization** — the Appearance section has been split into **Appearance** (theme, font, header) and **Behavior** (library, badge visibility, pattern viewer, notifications, mobile) for cleaner navigation
-- **Razer → Gamer** — the Razer theme has been renamed to Gamer to avoid trademark issues
 
 ### Housekeeping
 - **Simplified docker-compose example** — README compose snippet now uses plain values instead of `${VAR:-default}` syntax

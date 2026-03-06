@@ -67,9 +67,29 @@ Click **Add Counter** and give it a name. A default counter is created automatic
 - **+** to increment, **−** to decrement
 - **Reset** to return to zero (requires confirmation)
 - Click the counter name to rename it
-- Delete counters you no longer need (requires confirmation)
+- Click the **settings cog** on a counter to access settings and delete
 
 All counter values save automatically after every change.
+
+### Counter Settings
+
+Click the settings cog on any counter to access its options:
+
+- **Main** — designate this counter as the main counter (see below)
+- **Repeat** — enable repeating and set a row count (see below)
+- **Delete** — remove the counter (requires two clicks to confirm)
+
+### Main Counter
+
+One counter per pattern can be designated as the **main** counter. When any other counter is incremented or decremented, the main counter automatically follows. This lets you track both overall row count and repeat position at the same time.
+
+The main counter's name is displayed in the accent color so you can identify it at a glance. Only one counter can be main at a time.
+
+### Repeating Counters
+
+Counters can be set to repeat by toggling **Repeat** on in the counter settings and setting a row count. When the counter reaches the limit, the next increment resets it back to 1. The counter displays the value as `3/10` with the max in a smaller font.
+
+This is useful for tracking repeating stitch patterns — for example, a 10-row repeat on a dishcloth. Combined with a main counter, you can track both the repeat position and total rows simultaneously.
 
 ### Keyboard Shortcuts
 

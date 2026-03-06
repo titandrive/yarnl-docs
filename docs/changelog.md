@@ -1,12 +1,27 @@
 ---
 sidebar_position: 5
-title: Changelog
+title: Release Notes
 description: Release history for Yarnl
 ---
 
-# Changelog
+# Release Notes
 
 All notable changes to Yarnl, listed by version. See [GitHub Releases](https://github.com/titandrive/yarnl/releases) for download links and Docker images.
+
+---
+
+## v0.6.11
+
+### Features
+- **Counter layout setting** — new option under Settings > Behavior > Pattern Viewer to choose between **Stack** (wrap to multiple rows, the default) and **Scroll** (single horizontal row with scrolling). Desktop only.
+
+### UI
+- **Settings reorganization** — the Appearance section has been split into **Appearance** (theme, font, header) and **Behavior** (library, badge visibility, pattern viewer, notifications, mobile) for cleaner navigation
+- **Razer → Gamer** — the Razer theme has been renamed to Gamer to avoid trademark issues
+
+### Housekeeping
+- **Simplified docker-compose example** — README compose snippet now uses plain values instead of `${VAR:-default}` syntax
+- **Compact unlink button** — the Unlink toggle has been replaced with a link icon button that takes up less space
 
 ---
 
@@ -96,7 +111,7 @@ All notable changes to Yarnl, listed by version. See [GitHub Releases](https://g
 ## v0.6.3
 
 ### Features
-- **Configurable inactivity timeout** — set how long before the auto timer pauses, or disable it entirely (Settings > Appearance > Inactivity Timeout)
+- **Configurable inactivity timeout** — set how long before the auto timer pauses, or disable it entirely (Settings > Behavior > Inactivity Timeout)
 
 ### Bug Fixes
 - **Timer saves reliably on exit** — timer seconds are cached locally when closing a pattern, preventing lost time from server save race conditions
@@ -109,7 +124,7 @@ All notable changes to Yarnl, listed by version. See [GitHub Releases](https://g
 ## v0.6.2
 
 ### Features
-- **What's New popup toggle** — disable the release notes popup from Settings > Appearance > Notifications
+- **What's New popup toggle** — disable the release notes popup from Settings > Behavior > Notifications
 
 ### Bug Fixes
 - **Auto timer persists on exit** — timer state is preserved when leaving and re-opening a pattern

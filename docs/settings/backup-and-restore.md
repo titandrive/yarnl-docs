@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 sidebar_class_name: sidebar-icon-save
 title: Backup & Restore
 description: Create and manage backups of your patterns, settings, and data

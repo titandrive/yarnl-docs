@@ -146,7 +146,7 @@ Haptic feedback (vibration) is available on supported devices and can be toggled
 
 ### Keep Screen Awake
 
-Yarnl can prevent your device from sleeping while you're viewing a pattern. Enable **Keep Screen Awake** in [Appearance settings](../settings/appearance).
+Yarnl can prevent your device from sleeping while you're viewing a pattern. Enable **Keep Screen Awake** in [Behavior settings](../settings/behavior).
 
 This uses the Screen Wake Lock API, which is supported on:
 

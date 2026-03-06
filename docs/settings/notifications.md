@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 sidebar_class_name: sidebar-icon-bell
 title: Notifications
 description: Configure push notifications for app events

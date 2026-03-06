@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 sidebar_class_name: sidebar-icon-grid
 title: Categories & Tags
 description: Organize your pattern library with categories and hashtags

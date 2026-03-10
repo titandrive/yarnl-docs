@@ -48,6 +48,14 @@ Controls which badges are shown on pattern cards in the library.
 
 ---
 
+## Inventory
+
+| Setting | Description |
+|---------|-------------|
+| **Hide Inventory Tab** | Hide the Inventory tab from the main navigation. Default: shown. Useful if you only use Yarnl for pattern management. |
+
+---
+
 ## Notifications
 
 | Setting | Description |

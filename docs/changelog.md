@@ -10,6 +10,19 @@ All notable changes to Yarnl, listed by version. See [GitHub Releases](https://g
 
 ---
 
+## v0.7.0
+
+### Features
+- **Inventory tab** — track your yarn stash and hook/needle collection alongside your patterns. Add items with detailed metadata, upload photos, and link supplies to patterns. Includes card and list views, sortable/filterable columns, bulk operations, and a collapsible filter sidebar.
+- **Product URL import** — paste a product URL when adding yarn or hooks and Yarnl auto-extracts the image, brand, name, and other fields from the page.
+- **Pattern linking** — link yarns and hooks to patterns from the pattern edit modal. View all linked patterns from any inventory item.
+- **Undo delete** — deleting yarns, hooks, patterns, or archives now shows a toast with an Undo button. The delete is delayed 5 seconds so you can recover accidental removals.
+
+### Settings
+- **Hide Inventory tab** — toggle the Inventory tab on or off from Settings > Behavior > Inventory
+
+---
+
 ## v0.6.11
 
 ### Features

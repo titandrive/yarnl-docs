@@ -16,7 +16,7 @@ Each backup is a ZIP file containing your database and (optionally) your files:
 
 ```
 yarnl-backup-2026-01-20T12-00-00.zip
-├── database.json          # Patterns, counters, categories, hashtags
+├── database.json          # Patterns, counters, categories, hashtags, inventory
 ├── settings.json          # Your client settings
 ├── patterns/              # PDF and markdown pattern files
 │   └── [category]/
@@ -28,7 +28,7 @@ yarnl-backup-2026-01-20T12-00-00.zip
     └── *.md
 ```
 
-The `database.json` includes all pattern metadata: counters, timer data, PDF positions, categories, hashtags, and favorites. This is always included in every backup.
+The `database.json` includes all pattern metadata: counters, timer data, PDF positions, categories, hashtags, favorites, and inventory (yarns, hooks, and pattern links). This is always included in every backup.
 
 ### Backup Options
 

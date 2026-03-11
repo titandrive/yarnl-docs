@@ -8,6 +8,23 @@ description: Release history for Yarnl
 
 ---
 
+## v0.9.1
+
+### Ravelry Improvements
+Builds on the Ravelry integration introduced in [v0.9.0](#v090). [Setup guide →](https://yarnl.com/docs/guide/ravelry)
+
+- **Auto-tag on import** — all Ravelry imports (URL and bulk) are automatically tagged `#ravelry`. Bulk imports also receive a tag matching the Ravelry category (e.g. `#animal`, `#accessory`).
+- **Tags column in list view** — a Tags column is now visible by default in list view. Tags are clickable and filter the library, matching card view behavior.
+- **PDF badges on Browse tab** — patterns without a downloadable PDF show a red **No PDF** badge before you select them. Import is blocked with a descriptive error explaining whether the PDF needs to be purchased, added to your library, or doesn't exist.
+- **PDF badges on Favorites tab** — same PDF status badges on pattern favorites. Patterns in your Ravelry library or available as free downloads show **PDF available**; others show **No PDF**.
+- **Partial import** — if you select a mix of importable and non-importable patterns, the valid ones still import. Errors are shown for the blocked ones without stopping the rest.
+- **URL import UX** — `#ravelry` tag is pre-selected when opening the URL import modal. Clicking outside the modal closes it.
+- **Bulk import fixes** — Ravelry categories are now saved as tags instead of overwriting the Yarnl category. HTML in pattern descriptions is stripped before import.
+- **Search clear button** — the X button to clear the search bar is now also shown in list view, matching card view.
+- **Edit modal buttons** — button sizing in the edit modal is consistent across all screen sizes.
+
+---
+
 ## v0.9.0
 
 ### New: Ravelry Integration

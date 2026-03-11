@@ -20,6 +20,8 @@ Ravelry's OAuth API requires a valid HTTPS callback URL. Make sure Yarnl is acce
 
 ## Step 1 — Create a Ravelry App
 
+Creating a Ravelry API app is free.
+
 1. Go to [ravelry.com/pro/developer](https://www.ravelry.com/pro/developer) and log in
 2. Select **OAuth 2.0** from the credentials dropdown and click **Create App**
 

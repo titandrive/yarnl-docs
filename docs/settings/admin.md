@@ -81,3 +81,21 @@ Configure OpenID Connect (OIDC) for single sign-on authentication.
 |--------|-------------|
 | **Save OIDC Settings** | Save the current OIDC configuration. |
 | **Reset OIDC** | Clear all OIDC settings and disable SSO. |
+
+---
+
+## Ravelry Integration
+
+Configure the Ravelry integration to allow users to import their patterns, yarn stash, and tools. See the [Ravelry setup guide](../guide/ravelry) for step-by-step instructions.
+
+| Setting | Description |
+|---------|-------------|
+| **Enable Ravelry** | Allow users to connect their Ravelry account and access the Ravelry import tab. |
+| **Callback URL** | The redirect URL to register in your Ravelry app. Click to copy. Must use HTTPS. |
+| **Client ID** | The Client ID from your Ravelry OAuth app. |
+| **Client Secret** | The Client Secret from your Ravelry OAuth app. |
+
+| Button | Description |
+|--------|-------------|
+| **Test Connection** | Verify that the Client ID and Secret are valid. |
+| **Save Ravelry Settings** | Save the current Ravelry configuration. |

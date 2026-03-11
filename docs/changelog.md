@@ -4,36 +4,186 @@ title: Release Notes
 description: Release history for Yarnl
 ---
 
-# Release Notes
+# Yarnl Release Notes
 
-All notable changes to Yarnl, listed by version. See [GitHub Releases](https://github.com/titandrive/yarnl/releases) for download links and Docker images.
+---
+
+## v0.9.0
+
+### New: Ravelry Integration
+Connect your Ravelry account and import your library directly into Yarnl. [Setup guide →](https://yarnl.com/docs/guide/ravelry)
+
+- **Browse & import** — a new Ravelry panel lets you browse your Ravelry library, stash, tools, and favorites with photos, badges, and checkboxes. Select individual items or import everything at once.
+- **Pattern import** — imports patterns from your Ravelry library with PDF auto-downloaded and attached. Re-import is supported; already-imported items are marked with a badge.
+- **Yarn import** — imports yarn from your Ravelry stash with full metadata: brand, name, colorway, weight, fiber content, and skein quantity.
+- **Tools import** — imports hooks and knitting needles from your Ravelry tools list.
+- **Favorites import** — imports favorited patterns and yarn from your Ravelry favorites with type badges.
+- **URL import** — paste any Ravelry pattern URL to preview and import it directly. A two-step flow shows pattern info, checks PDF availability, and lets you set name, description, category, hashtags, rating, favorite, and in-progress status before importing.
+- **Duplicate detection** — if a pattern with the same name already exists, a warning is shown. You can import it anyway with a *(Copy)* suffix appended automatically.
+- **PDF check on preview** — PDF availability is verified on the first step; patterns with no downloadable PDF are blocked before you reach the import step, with distinct error messages for paid vs. free patterns.
+- **HTML stripping** — Ravelry pattern notes with HTML formatting are automatically cleaned before import.
+- **Token refresh** — Ravelry API calls automatically retry with a fresh token on auth errors. If the session can no longer be refreshed, a clear error is shown.
+- **Bulk import error handling** — if a token expires mid-import, the error is surfaced in the progress bar and as a toast with a reconnect prompt; import buttons are re-enabled.
+- **Tab icons** — each Ravelry tab (Patterns, Yarn, Tools, Favorites) has an icon. "Hooks & Needles" renamed to "Tools".
+- **Docs link** — admin Ravelry settings now link to the setup guide.
+
+### Column Persistence
+- **Synced across devices** — column order and column visibility for patterns, yarn, and hooks now sync to the server and persist across devices and sessions.
+- **Sort persistence** — active sort column and direction persist on page refresh.
+
+### Toolbar Improvements
+- **Uniform toolbar height** — inventory and library toolbars use `align-items: stretch` so the search input, view toggle, and Edit button all match height on desktop.
+- **Mobile Edit button** — library and inventory mobile bars now include an Edit (multi-select) button, matching each other.
+- **Bulk toolbar: archive/delete restored** — the quick archive (or delete, depending on your settings) button is back in the floating bulk selection bar, to the left of Edit.
+- **Bulk toolbar mobile** — Edit label hidden on mobile (icon only) to prevent the toolbar overflowing on small screens.
+
+### Yarn Form
+- **Compact add form** — yarn URL field moved to the top, related fields merged onto shared rows, and a favorite toggle added directly in the form.
+
+---
+
+## v0.8.2
+
+### Bug Fixes
+- **Column show/hide actually works** — hiding a column from the right-click menu now persists correctly. Previously, hidden columns would silently reappear on every page load.
+- **Duplicate column fix** — fixed a bug where the Name column (or any column) could appear twice in list view. Saved column orders are automatically deduplicated on load.
+- **Column position restored on re-show** — re-enabling a hidden column now inserts it back where it was, instead of appending it to the end.
+
+---
+
+## v0.8.1
+
+### New: Star Ratings
+Rate your patterns, yarn, and hooks on a 0–5 star scale.
+
+- **Rate anywhere** — set ratings from edit modals, right-click context menus, bulk toolbars, and the pattern creation form
+- **Card view badges** — rated items show filled stars overlaid on the card thumbnail (no background, drop shadow for visibility)
+- **List view column** — star rating column available in all list views (patterns, yarn, hooks) with sortable headers
+- **Filter by rating** — sidebar rating filter on library and inventory views to show only items with a specific star count
+- **Sort by rating** — sort by rating (highest/lowest) in all card and list view sort dropdowns
+- **Bulk rating** — set ratings in bulk from the pattern toolbar and inventory bulk bar
+- **In Progress cards** — rating badges shown on In Progress page pattern cards
+- **Pattern info modal** — rating displayed in the read-only pattern info popup
+
+### New: Inventory Favorites
+- **Favorite yarn and hooks** — heart icon on card hover (top-right), in context menus, list view column, and bulk toolbar
+- **Favorite included in backups** — favorite state for yarn and hooks is backed up and restored
+
+### New: Heart Favorites
+- **Heart icons** — all favorite icons changed from stars to hearts to avoid confusion with the new star ratings
+- **Fixed In Progress favorite toggle** — toggling favorite on the In Progress page now updates correctly
+
+### Quick Actions in Bulk Toolbar
+- **Pattern bulk toolbar** — added quick action buttons for In Progress, Favorite, and Complete toggles, plus inline rating stars, so you can update multiple patterns without opening the bulk edit modal
+- **Fixed Clear button** — bulk selection Clear button now works correctly in list view
+
+### Mobile & Navigation
+- **Inventory in swipe navigation** — swipe left/right now includes the Inventory tab in the tab cycle
+- **List view swipe conflict fixed** — horizontal swiping in list view tables no longer accidentally switches tabs
+- **Projects tab flash fixed** — projects tab no longer briefly flashes content on initial load
+
+### UI Polish
+- **Compact edit modals** — pattern edit modals (standalone, PDF viewer, markdown viewer) restructured with thumbnail, rating, and in-progress toggle on one row to eliminate scrolling
+- **Mobile bulk toolbar** — bulk toolbars no longer overflow on small screens; rating stars hidden on mobile, full-width positioning
+- **Knitting needle placeholder** — knitting needles now use a dedicated needle SVG instead of the crochet hook icon
+- **Inventory card thumbnails** — uploaded photos no longer make cards taller than placeholder cards
+- **Empty state text wrapping** — fixed text wrapping in grid layout empty states
+
+---
+
+## v0.8.0
+
+### New: Yarn & Hook Inventory
+Track your yarn stash and hook/needle collection alongside your patterns.
+
+- **Yarn inventory** — add yarns with brand, name, color, dye lot, weight category, fiber content, and quantity. Brand autocomplete remembers previous entries.
+- **Hook & needle inventory** — add crochet hooks and knitting needles with size, type, brand, and length. Toggle between crochet and knitting with a craft type switch.
+- **Card and list views** — switch between card grid and sortable table for both yarn and hooks. View preference persists per tab.
+- **Photo support** — upload photos for yarn and hooks via the thumbnail modal, or import product images automatically from a URL.
+- **Product URL import** — paste a product URL and Yarnl extracts the image, brand, name, weight, fiber, and other metadata from the page automatically.
+- **Pattern linking** — link yarns and hooks to patterns from the pattern edit modal's Inventory tab. Search and select from your inventory with brand-grouped results.
+- **Sidebar with sort & filter** — filter yarn by weight and brand, hooks by size, type, and craft. Sort by any field. Sidebar collapses to save space.
+- **Bulk operations** — long-press cards (mobile) or use edit mode to bulk select items for delete or quantity adjustment.
+
+### New: Library List View
+The pattern library now supports a list view alongside the existing card grid.
+
+- **Sortable columns** — click column headers to sort by name, category, status, date added, time tracked, and more.
+- **All columns shown by default** — description, favorite, completed date, and started date columns are now visible out of the box.
+- **Draggable column reorder** — drag column headers to rearrange columns. Order persists per tab.
+- **Column visibility menu** — right-click any column header to show/hide columns. Photo column is toggleable like all others.
+- **Right-click context menu** — right-click any row in list view to access actions (edit, delete, and for patterns: in progress, favorite, complete).
+- **Long-press context menu on mobile** — long-press a list row on mobile to open the same context menu. Card view long-press remains bulk selection.
+- **List view thumbnails** — pattern, yarn, and hook placeholder icons shown in the Photo column when no image exists.
+- **Stable sort arrows** — sort indicator arrows no longer cause column headers to jump when clicked.
+- **Auto-insert new columns** — when new default columns are added in updates, they automatically appear at the correct position in your saved column order.
+
+### Undo Delete
+- **Undo toast for all deletes** — deleting or archiving patterns, yarn, or hooks now shows a 5-second toast with an Undo button. The item is removed from the UI immediately but the server delete is delayed, giving you a window to reverse accidental deletions.
+
+### Settings
+- **Hide Inventory tab** — toggle the Inventory tab on or off from Settings > Behavior > Inventory (default: shown).
+
+### Mobile
+- **Inventory mobile layout** — yarn and hook views adapt to mobile with responsive cards, filters, and toolbar.
+- **Library mobile layout** — pattern list view works on mobile with horizontal scroll for wide tables.
+
+### Infrastructure
+- **Inventory in backups** — yarn, hooks, and pattern-inventory links are now included in user backups and restored correctly with ID remapping.
+- **Column order synced** — pattern, yarn, and hook column orders sync to the server alongside other settings.
+- **Fix inventory thumbnail uploads** — yarn and hook photo uploads were silently rejected by the wrong multer filter (PDF-only instead of image). Fixed.
+
+### UI Polish
+- **New pattern placeholder icon** — replaced the generic yarn ball with a crocheting icon by Trimanggolo Mulyo from Noun Project (CC BY 3.0).
+- **Larger card placeholders** — pattern placeholder icons increased to 100px, yarn and hook to 56px.
+- **Inventory sub-tabs** — yarn and hooks use segmented control styling matching the rest of the app.
+- **Compact modals** — inventory modals use metric-first size selectors and a streamlined layout.
+
+---
+
+## v0.7.2
+
+### Features
+- **Counter indicator icons** — link and star icons appear next to counter names to show which counter is the main (linked) counter and which have repeat enabled, visible at a glance without opening settings
+- **Synced pinned counters** — pinned counter state now syncs to the server, so your pinned layout persists across devices and sessions
+
+### Bug Fixes
+- **Main/unlink toggles not sticking on mobile** — fixed optimistic update so toggle state saves reliably
+- **Mobile carousel swipe issues** — polished touch interactions, fixed wrap-around animation glitches
+- **Pin/unpin button guard** — disabled the button when it would empty the carousel or pinned list
+- **Disabled Main toggle tooltip on mobile** — tapping the greyed-out Main toggle now shows a tooltip explaining which counter holds the main role
+
+---
+
+## v0.7.1
+
+### Infrastructure
+- **Fix node-cron CPU/RAM leak** — replaced node-cron with croner to fix a memory leak that caused increasing CPU and RAM usage over time
 
 ---
 
 ## v0.7.0
 
 ### Features
-- **Inventory tab** — track your yarn stash and hook/needle collection alongside your patterns. Add items with detailed metadata, upload photos, and link supplies to patterns. Includes card and list views, sortable/filterable columns, bulk operations, and a collapsible filter sidebar.
-- **Product URL import** — paste a product URL when adding yarn or hooks and Yarnl auto-extracts the image, brand, name, and other fields from the page.
-- **Pattern linking** — link yarns and hooks to patterns from the pattern edit modal. View all linked patterns from any inventory item.
-- **Undo delete** — deleting yarns, hooks, patterns, or archives now shows a toast with an Undo button. The delete is delayed 5 seconds so you can recover accidental removals.
+- **Pinnable mobile counters** — pin any counter above the bottom bar so it's always visible while you work. Tap a counter to open the edit panel, then tap the maximize icon to pin it. Tap the minimize icon to return it to the swipeable carousel. Multiple counters can be pinned at once, making it easy to track both overall row count and repeat position simultaneously.
+- **Swipeable counter cards** — mobile counters are now full swipeable cards with their own +/− buttons. Swipe left and right to switch between counters, or use the arrow buttons. Dot indicators show your position when multiple counters exist.
+- **Infinite carousel** — swiping past the last counter wraps around to the first (and vice versa) with the same smooth slide animation
+- **Counter layout setting** — choose between stacked (default) or scrollable counter layout on desktop (Settings > Behavior > Pattern Viewer)
 
-### Settings
-- **Hide Inventory tab** — toggle the Inventory tab on or off from Settings > Behavior > Inventory
+### UI Polish
+- **Settings reorganization** — Appearance settings split into **Appearance** (visual) and **Behavior** (functional) sections for easier navigation
+- **Eager dot indicators** — carousel position dots update during the swipe, not after
+
+### Bug Fixes
+- **Mobile unlink button state not saving** — fixed async handler that was reading stale state
+- **Unlink touch target too small** — increased padding for easier tapping
 
 ---
 
 ## v0.6.11
 
-### Features
-- **Counter layout setting** — new option under Settings > Behavior > Pattern Viewer to choose between **Stack** (wrap to multiple rows, the default) and **Scroll** (single horizontal row with scrolling). Desktop only.
-
-### UI
-- **Settings reorganization** — the Appearance section has been split into **Appearance** (theme, font, header) and **Behavior** (library, badge visibility, pattern viewer, notifications, mobile) for cleaner navigation
-
-### Housekeeping
-- **Simplified docker-compose example** — README compose snippet now uses plain values instead of `${VAR:-default}` syntax
-- **Compact unlink button** — the Unlink toggle has been replaced with a link icon button that takes up less space
+### Infrastructure
+- **Updated README tech stack** — added Marked.js, pdf-parse, multer, archiver, unzipper, node-cron, pg
 
 ---
 
@@ -285,4 +435,4 @@ All notable changes to Yarnl, listed by version. See [GitHub Releases](https://g
 
 ## v0.5.0
 
-Initial public release.
+Initial release.

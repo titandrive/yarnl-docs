@@ -7,7 +7,24 @@
       "Bash(ls:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "WebFetch(domain:caniuse.com)",
+      "WebFetch(domain:web.dev)",
+      "WebFetch(domain:www.etsy.com)",
+      "WebFetch(domain:thecrochetcarpenter.ca)",
+      "WebFetch(domain:thewoobles.com)",
+      "Bash(curl:*)",
+      "Bash(done)",
+      "Bash(file:*)",
+      "Bash(npm run build:*)",
+      "Bash(git status:*)",
+      "Bash(git rm:*)",
+      "Bash(git -C /Users/jake/Documents/Projects/Yarnl/yarnl-docs diff docs/guide/installation.md)",
+      "Bash(git -C /Users/jake/Documents/Projects/Yarnl/yarnl-docs add docs/guide/installation.md)",
+      "Bash(git -C /Users/jake/Documents/Projects/Yarnl/yarnl-docs commit -m \"$\\(cat <<''EOF''\nUpdate installation wording\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C /Users/jake/Documents/Projects/Yarnl/yarnl-docs push)",
+      "Bash(find:*)",
+      "Bash(git -C /Users/jake/Documents/Projects/Yarnl/yarnl-docs log --oneline -5)"
     ]
   }
 }

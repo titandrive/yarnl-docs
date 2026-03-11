@@ -6,6 +6,10 @@ description: Track your yarn stash and hook/needle collection alongside your pat
 
 # Inventory
 
+:::note
+Inventory was added in **v0.8.0**.
+:::
+
 Track your yarn stash and hook/needle collection alongside your patterns. The Inventory tab gives you a searchable, filterable catalog of your supplies with pattern linking so you always know what you have and where it's being used.
 
 ---

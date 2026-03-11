@@ -6,6 +6,10 @@ description: Import your patterns, yarn stash, and tools from Ravelry into Yarnl
 
 # Ravelry
 
+:::note
+Ravelry integration was added in **v0.9.0**.
+:::
+
 Yarnl integrates with [Ravelry](https://www.ravelry.com) to let you import your patterns, yarn stash, hooks, and favorites directly from your Ravelry account. This guide walks through registering a Ravelry app, configuring the integration in Yarnl, and importing your data.
 
 :::warning HTTPS Required

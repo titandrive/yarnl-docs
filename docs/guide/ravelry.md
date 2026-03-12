@@ -64,7 +64,7 @@ The **Callback URL** shown in the settings panel is what you need to enter in Ra
 
 ## Step 3 — Connect Your Ravelry Account
 
-1. Go to the **Ravelry** tab in Yarnl
+1. Go to the new **Ravelry** tab that is now **Settings**
 2. Click **Connect Ravelry**
 
    ![Yarnl Ravelry tab with Connect button](img/ravelry/yarnl-connect-ravelry.png)
@@ -110,3 +110,26 @@ Hooks and needles from your Ravelry needle/hook inventory.
 Patterns you've favorited on Ravelry.
 
 <img src={require('./img/ravelry/yarnl-import-favorites.png').default} alt="Import Favorites tab" style={{width: '75%'}} />
+
+
+---
+
+## Import from a Ravelry URL
+
+You can import any individual Ravelry pattern by URL — useful for free patterns or when you want to preview and customize before importing.
+
+1. Click **+ Add** in the pattern library and select **Ravelry URL**
+
+   <img src={require('./img/ravelry/yarnl-add-menu.png').default} alt="Add menu with Ravelry URL option" style={{width: '40%'}} />
+
+2. Paste the Ravelry pattern URL and click **Next**
+
+   <img src={require('./img/ravelry/yarnl-url-import-step1.png').default} alt="Import from Ravelry URL input" style={{width: '75%'}} />
+
+   Yarnl checks PDF availability immediately. If no PDF is downloadable, an error is shown before you continue.
+
+3. Review and edit the pattern details, then click **Import**
+
+   <img src={require('./img/ravelry/yarnl-url-import-step2.png').default} alt="Import from Ravelry pattern details" style={{width: '75%'}} />
+
+   You can edit the title, category, description, tags, rating, favorite, and in-progress status before importing. The `#ravelry` tag is pre-selected, and Ravelry category tags are suggested below the tag field.

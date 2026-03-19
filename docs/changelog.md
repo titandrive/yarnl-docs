@@ -8,6 +8,74 @@ description: Release history for Yarnl
 
 ---
 
+## v0.9.4
+
+### List View
+- **Filter menu** — a new Filters button appears in the list view toolbar (desktop and mobile) with toggles for Completed, In Progress, PDF, and Markdown visibility. Previously these filters were only accessible from the sidebar, which is hidden in list view.
+- **Active filter indicator** — a dot badge appears on the Filters button when any filter is hiding items.
+
+### Context Menu
+- **Scroll to dismiss on mobile** — scrolling now dismisses the context menu on mobile, making it easier to close without tapping.
+
+---
+
+## v0.9.3
+
+### New: Difficulty Ratings
+- **Difficulty field** — patterns now have a difficulty rating on a 1–10 scale (matching Ravelry). Set it from any edit modal, the bulk edit panel, or view it in the pattern info modal.
+- **List view column** — new Difficulty column available in list view, sortable like other columns.
+- **Bulk edit** — set difficulty across multiple patterns at once from the bulk edit modal.
+- **Ravelry import** — difficulty is automatically imported from Ravelry's community difficulty average.
+
+### Pattern Viewer
+- **Scroll sync rewrite** — markdown live preview scroll sync completely rewritten. Uses a mirror-div approach for accurate position mapping and lerp-based smooth scrolling to eliminate jumpiness around images and tall elements.
+
+### Context Menu
+- **Open in New Tab / New Window** — right-click a pattern in list view to open it in a new browser tab or popup window (desktop only).
+- **Auto-dismiss on mobile** — context menus automatically close after 5 seconds of inactivity on mobile, since there's no easy way to tap away.
+
+### Settings
+- **Tab centering on mobile** — tapping a settings tab now scrolls it to the center of the nav bar.
+
+### Ravelry
+- **Better PDF error messages** — free Ravelry-hosted patterns that aren't in your library now show a clear message explaining how to fix the issue, instead of a generic error.
+
+### Bug Fixes
+- **Mobile counters for markdown patterns** — counters now show correctly on mobile when viewing markdown patterns.
+- **Yarn/hook modal layout** — fixed button layout in yarn and hook edit modals. Delete button now shows the correct label ("Delete Yarn" / "Delete Hook" instead of "Delete Pattern").
+- **Duplicate yarn/hook** — fixed crash when duplicating a yarn or hook (null ID error).
+- **List view sort persistence** — sort order in list view now persists across refreshes and syncs across devices.
+- **Bulk edit modal** — tightened spacing for a more compact layout.
+
+---
+
+## v0.9.2
+
+### Ravelry
+- **Mobile layout** — Ravelry panel now fits on mobile screens. Tabs scroll horizontally and actions wrap correctly.
+- **Swipeable tabs** — swipe left/right to switch between Ravelry tabs on mobile without triggering the main settings swipe.
+- **Mascot shortcut** — new mascot action option to jump directly to the Ravelry settings tab.
+
+### Pattern Cards
+- **Badge reorganization** — star ratings centered on the thumbnail (no background), hearts bottom-right, PDF/MD badge bottom-left (replaced by owner badge when viewing another user's pattern).
+- **Favorite Badge toggle** — show/hide the heart badge on cards (renamed from Star Badge).
+- **Rating Badge toggle** — new setting to show/hide star ratings on pattern cards.
+
+### Edit Modals
+- **Even button spacing** — action buttons in all three edit modals (PDF viewer, markdown viewer, library card) are now evenly spaced across the full width.
+- **Add to Account** — when an admin opens another user's pattern, a new "Add to Account" button copies the pattern (PDF, thumbnail, hashtags, and counter structure) to the admin's own library. Counter values are reset to 0. Replaces the Duplicate button in that context.
+- **Revert Annotations moved** — Revert Annotations button relocated to the modal header, freeing up space in the action row.
+- **Markdown edit modal** — Add to Account button now also appears in the markdown pattern edit modal.
+
+### Admin
+- **In Progress tab** — marking another user's pattern as In Progress now shows and persists correctly on refresh, with the owner badge intact.
+- **In Progress ordering** — newly marked patterns appear at the top of the In Progress tab, matching server order.
+
+### Bug Fixes
+- **Blank screen on refresh** — refreshing while in the pattern viewer now correctly reopens the pattern. Handles slug-with-ID URLs (e.g. `my-pattern-42`) and falls back to the default tab if the pattern can't be resolved.
+
+---
+
 ## v0.9.1
 
 ### Ravelry Improvements
